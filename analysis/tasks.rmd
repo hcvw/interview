@@ -98,7 +98,7 @@ for (flavor in unique(flavor_long$Attribute)) {
 ```
 
 ```{r, results='asis'}
-print(xtable(results), type = "html")
+print(xtable(results[,2:5]), type = "html")
 ```
 
 
