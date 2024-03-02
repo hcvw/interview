@@ -515,16 +515,16 @@ data/df_flavor.csv
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomhcvwinterviewtreef4e79ceacf09517e43f466b4de1fa62f85f4dd61targetblankf4e79cea"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/hcvw/interview/tree/f4e79ceacf09517e43f466b4de1fa62f85f4dd61" target="_blank">f4e79ce</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomhcvwinterviewtree3d2aceeafdf1dec449f1a837f9ecaef7bf98759atargetblank3d2aceea"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/hcvw/interview/tree/3d2aceeafdf1dec449f1a837f9ecaef7bf98759a" target="_blank">3d2acee</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomhcvwinterviewtreef4e79ceacf09517e43f466b4de1fa62f85f4dd61targetblankf4e79cea" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomhcvwinterviewtree3d2aceeafdf1dec449f1a837f9ecaef7bf98759atargetblank3d2aceea" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/hcvw/interview/tree/f4e79ceacf09517e43f466b4de1fa62f85f4dd61" target="_blank">f4e79ce</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/hcvw/interview/tree/3d2aceeafdf1dec449f1a837f9ecaef7bf98759a" target="_blank">3d2acee</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -572,6 +572,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/hcvw/interview/blob/3d2aceeafdf1dec449f1a837f9ecaef7bf98759a/analysis/tasks.rmd" target="_blank">3d2acee</a>
+</td>
+<td>
+Hannah Van Wyk
+</td>
+<td>
+2024-03-02
+</td>
+<td>
+Start my new project
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/hcvw/interview/c97b32a962623888e9ec3efad9d63c997158d0f4/docs/tasks.html" target="_blank">c97b32a</a>
+</td>
+<td>
+Hannah Van Wyk
+</td>
+<td>
+2024-03-02
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -2241,11 +2275,43 @@ results_g2 = results[which(results$Gum == &quot;Starch-Limonene Inclusion Comple
 t1 &lt;- kable(results_g1, format = &quot;latex&quot;, booktabs = TRUE)
 t2 &lt;- kable(results_g2, format = &quot;latex&quot;, booktabs = TRUE)
 
-cat(c(&quot;\\begin{table}[h] \\centering &quot;, 
-      t1,
-    &quot;\\hspace{1cm} \\centering &quot;,
-      t2,
-    &quot;\\caption{My tables} \\end{table}&quot;))</code></pre>
+knitr::kable(list(t1, t2))</code></pre>
+<table class="kable_wrapper">
+<tbody>
+<tr>
+<td>
+<table>
+<thead>
+<tr class="header">
+<th align="left">x</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">\begin{tabular}{llllll}</td>
+</tr>
+</tbody>
+</table>
+<p>&amp; Flavor &amp; Gum &amp; Time to Peak (mins.) &amp; Max proportion &amp; AUC\  &amp; Bitter &amp; Free Limonene &amp; 118 &amp; 0.19 &amp; 15.09\ 3 &amp; Citrus &amp; Free Limonene &amp; 41 &amp; 0.64 &amp; 56.7\ 5 &amp; Cohesive &amp; Free Limonene &amp; 71 &amp; 0.87 &amp; 88.47\ 7 &amp; Sour &amp; Free Limonene &amp; 18 &amp; 0.17 &amp; 8.82\ 9 &amp; Stale &amp; Free Limonene &amp; 119 &amp; 0.48 &amp; 23.39\  &amp; Sweet &amp; Free Limonene &amp; 22 &amp; 0.83 &amp; 71.95\  \end{tabular} |</p>
+</td>
+<td>
+<table>
+<thead>
+<tr class="header">
+<th align="left">x</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">\begin{tabular}{llllll}</td>
+</tr>
+</tbody>
+</table>
+<p>&amp; Flavor &amp; Gum &amp; Time to Peak (mins.) &amp; Max proportion &amp; AUC\  &amp; Bitter &amp; Starch-Limonene Inclusion Complex &amp; 21 &amp; 0.5 &amp; 37.63\ 4 &amp; Citrus &amp; Starch-Limonene Inclusion Complex &amp; 20 &amp; 0.7 &amp; 61.66\ 6 &amp; Cohesive &amp; Starch-Limonene Inclusion Complex &amp; 57 &amp; 0.84 &amp; 83.07\ 8 &amp; Sour &amp; Starch-Limonene Inclusion Complex &amp; 18 &amp; 0.36 &amp; 15.43\ 10 &amp; Stale &amp; Starch-Limonene Inclusion Complex &amp; 118 &amp; 0.54 &amp; 33.9\  &amp; Sweet &amp; Starch-Limonene Inclusion Complex &amp; 18 &amp; 0.55 &amp; 49.32\  \end{tabular} |</p>
+</td>
+</tr>
+</tbody>
+</table>
 <br>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
