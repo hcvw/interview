@@ -46,7 +46,7 @@ ggplot(merged_data, aes(x = Demographic.Group, y = State, fill = Difference)) +
   theme_classic() +
   labs(fill='') +
   xlab(c(""))+ ylab(c("")) +
-  theme(axis.text=element_text(size=12),legend.text=element_text(size=12),legend.position="bottom")
+  theme(axis.text=element_text(size=12),legend.text=element_text(size=12),legend.position="right")
 ```
 
 ## Task 2: Flavor detection time series analysis
