@@ -507,16 +507,16 @@ data/df_flavor.csv
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongdbfa3cd"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> dbfa3cd </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrong43cb429"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> 43cb429 </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongdbfa3cd" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrong43cb429" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version dbfa3cd. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version 43cb429. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -564,6 +564,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+43cb429
+</td>
+<td>
+Hannah Van Wyk
+</td>
+<td>
+2024-03-02
+</td>
+<td>
+Start my new project
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+daab509
+</td>
+<td>
+Hannah Van Wyk
+</td>
+<td>
+2024-03-02
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -1145,14 +1179,14 @@ Hannah Van Wyk
 </div>
 </div>
 <pre class="r"><code>results = as.data.frame(matrix(nrow = length(unique(flavor_long$Attribute)),ncol = 5))
-colnames(results) = c(&quot;Flavor&quot;,&quot;Gum&quot;, &quot;Time to Peak (TTP)&quot;, &quot;Max proportion&quot;,&quot;AUC&quot;)
+colnames(results) = c(&quot;Flavor&quot;,&quot;Gum&quot;, &quot;Time to Peak (mins.)&quot;, &quot;Max proportion&quot;,&quot;AUC&quot;)
 i = 1
 for (flavor in unique(flavor_long$Attribute)) {
   for(gum in unique(flavor_long$Sample_Name)){
     df = flavor_long[which(flavor_long$Attribute == flavor &amp; flavor_long$Sample_Name == gum),]
     
     # calculate AUC: measure of how much the flavor was detected overall
-    AUC = AUC(df$time, df$proportion)
+    AUC = round(AUC(df$time, df$proportion),2)
     
     # calculate tMax: time that it took to detect maximum proportion
     # of people detecting that flavor
@@ -1169,7 +1203,7 @@ for (flavor in unique(flavor_long$Attribute)) {
 }</code></pre>
 <pre class="r"><code>print(xtable(results),include.rownames=FALSE, type = &quot;html&quot;)</code></pre>
 <!-- html table generated in R 4.3.1 by xtable 1.8-4 package -->
-<!-- Sat Mar  2 14:10:57 2024 -->
+<!-- Sat Mar  2 14:11:35 2024 -->
 <table border="1">
 <tr>
 <th>
@@ -1179,7 +1213,7 @@ Flavor
 Gum
 </th>
 <th>
-Time to Peak (TTP)
+Time to Peak (mins.)
 </th>
 <th>
 Max proportion
@@ -1202,7 +1236,7 @@ Free Limonene
 0.19
 </td>
 <td>
-15.085
+15.09
 </td>
 </tr>
 <tr>
@@ -1219,7 +1253,7 @@ Starch-Limonene Inclusion Complex
 0.5
 </td>
 <td>
-37.635
+37.63
 </td>
 </tr>
 <tr>
@@ -1236,7 +1270,7 @@ Free Limonene
 0.64
 </td>
 <td>
-56.705
+56.7
 </td>
 </tr>
 <tr>
@@ -1270,7 +1304,7 @@ Free Limonene
 0.87
 </td>
 <td>
-88.465
+88.47
 </td>
 </tr>
 <tr>
@@ -1321,7 +1355,7 @@ Starch-Limonene Inclusion Complex
 0.36
 </td>
 <td>
-15.425
+15.43
 </td>
 </tr>
 <tr>
@@ -1355,7 +1389,7 @@ Starch-Limonene Inclusion Complex
 0.54
 </td>
 <td>
-33.895
+33.9
 </td>
 </tr>
 <tr>
@@ -1372,7 +1406,7 @@ Free Limonene
 0.83
 </td>
 <td>
-71.945
+71.95
 </td>
 </tr>
 <tr>
