@@ -98,8 +98,6 @@ for (flavor in unique(flavor_long$Attribute)) {
 }
 ```
 
-## Starch-Limonene Inclusion Complex results
-## Free Limonene results
 ```{r,results = 'asis'}
 results_g1 = results[which(results$Gum == "Free Limonene"),]
 results_g2 = results[which(results$Gum == "Starch-Limonene Inclusion Complex"),]
@@ -107,11 +105,11 @@ results_g2 = results[which(results$Gum == "Starch-Limonene Inclusion Complex"),]
 t1 <- kable(results_g1, format = "latex", booktabs = TRUE)
 t2 <- kable(results_g2, format = "latex", booktabs = TRUE)
 
-print(cat(c("\\begin{table}[h] \\centering ", 
+cat(c("\\begin{table}[h] \\centering ", 
       t1,
     "\\hspace{1cm} \\centering ",
       t2,
-    "\\caption{My tables} \\end{table}"))  )
+    "\\caption{My tables} \\end{table}"))
 ```
 
 
