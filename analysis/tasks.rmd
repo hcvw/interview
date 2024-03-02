@@ -100,7 +100,7 @@ for (flavor in unique(flavor_long$Attribute)) {
 
 ## Starch-Limonene Inclusion Complex results
 ## Free Limonene results
-```{r, echo = FALSE, results = 'asis', warning = F}
+```{r,results = 'asis'}
 results_g1 = results[which(results$Gum == "Free Limonene"),]
 results_g2 = results[which(results$Gum == "Starch-Limonene Inclusion Complex"),]
 
