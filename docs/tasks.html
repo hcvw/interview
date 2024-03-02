@@ -515,16 +515,16 @@ data/df_flavor.csv
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomhcvwinterviewtreeeedb4a692bea5c92f6f597fc4bdfb680fd3f5d93targetblankeedb4a6a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/hcvw/interview/tree/eedb4a692bea5c92f6f597fc4bdfb680fd3f5d93" target="_blank">eedb4a6</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomhcvwinterviewtree55a967c8f353e55dfbbfb3c740df6a75b0f02e97targetblank55a967ca"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/hcvw/interview/tree/55a967c8f353e55dfbbfb3c740df6a75b0f02e97" target="_blank">55a967c</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomhcvwinterviewtreeeedb4a692bea5c92f6f597fc4bdfb680fd3f5d93targetblankeedb4a6a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomhcvwinterviewtree55a967c8f353e55dfbbfb3c740df6a75b0f02e97targetblank55a967ca" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/hcvw/interview/tree/eedb4a692bea5c92f6f597fc4bdfb680fd3f5d93" target="_blank">eedb4a6</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/hcvw/interview/tree/55a967c8f353e55dfbbfb3c740df6a75b0f02e97" target="_blank">55a967c</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -572,6 +572,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/hcvw/interview/blob/55a967c8f353e55dfbbfb3c740df6a75b0f02e97/analysis/tasks.rmd" target="_blank">55a967c</a>
+</td>
+<td>
+Hannah Van Wyk
+</td>
+<td>
+2024-03-02
+</td>
+<td>
+Start my new project
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/hcvw/interview/4690c41f52969d3dcac5c452a85c712fa6258e68/docs/tasks.html" target="_blank">4690c41</a>
+</td>
+<td>
+Hannah Van Wyk
+</td>
+<td>
+2024-03-02
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -2510,75 +2544,72 @@ for (flavor in unique(flavor_long$Attribute)) {
 <pre class="r"><code>results_g1 = results[which(results$Gum == &quot;Free Limonene&quot;),]
 results_g2 = results[which(results$Gum == &quot;Starch-Limonene Inclusion Complex&quot;),]
 
-t1 &lt;- kable(results_g1[,c(1,3,4,5)])
-t2 &lt;- kable(results_g2)
-knitr::kable(list(t1, t2),&quot;simple&quot;)</code></pre>
+t1 &lt;- kable(results_g1)
+t2 &lt;- kable(results_g2, format = &quot;latex&quot;, booktabs = TRUE)
+t1</code></pre>
 <table>
 <thead>
 <tr class="header">
-<th align="left">x</th>
+<th align="left"></th>
+<th align="left">Flavor</th>
+<th align="left">Gum</th>
+<th align="left">Time to Peak (mins.)</th>
+<th align="left">Max proportion</th>
+<th align="left">AUC</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">| |Flavor |Time to Peak (mins.) |Max proportion |AUC |</td>
+<td align="left">1</td>
+<td align="left">Bitter</td>
+<td align="left">Free Limonene</td>
+<td align="left">118</td>
+<td align="left">0.19</td>
+<td align="left">15.09</td>
 </tr>
 <tr class="even">
-<td align="left">|:–|:——–|:——————–|:————–|:—–|</td>
+<td align="left">3</td>
+<td align="left">Citrus</td>
+<td align="left">Free Limonene</td>
+<td align="left">41</td>
+<td align="left">0.64</td>
+<td align="left">56.7</td>
 </tr>
 <tr class="odd">
-<td align="left">|1 |Bitter |118 |0.19 |15.09 |</td>
+<td align="left">5</td>
+<td align="left">Cohesive</td>
+<td align="left">Free Limonene</td>
+<td align="left">71</td>
+<td align="left">0.87</td>
+<td align="left">88.47</td>
 </tr>
 <tr class="even">
-<td align="left">|3 |Citrus |41 |0.64 |56.7 |</td>
+<td align="left">7</td>
+<td align="left">Sour</td>
+<td align="left">Free Limonene</td>
+<td align="left">18</td>
+<td align="left">0.17</td>
+<td align="left">8.82</td>
 </tr>
 <tr class="odd">
-<td align="left">|5 |Cohesive |71 |0.87 |88.47 |</td>
+<td align="left">9</td>
+<td align="left">Stale</td>
+<td align="left">Free Limonene</td>
+<td align="left">119</td>
+<td align="left">0.48</td>
+<td align="left">23.39</td>
 </tr>
 <tr class="even">
-<td align="left">|7 |Sour |18 |0.17 |8.82 |</td>
-</tr>
-<tr class="odd">
-<td align="left">|9 |Stale |119 |0.48 |23.39 |</td>
-</tr>
-<tr class="even">
-<td align="left">|11 |Sweet |22 |0.83 |71.95 |</td>
+<td align="left">11</td>
+<td align="left">Sweet</td>
+<td align="left">Free Limonene</td>
+<td align="left">22</td>
+<td align="left">0.83</td>
+<td align="left">71.95</td>
 </tr>
 </tbody>
 </table>
-<table>
-<thead>
-<tr class="header">
-<th align="left">x</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">| |Flavor |Gum |Time to Peak (mins.) |Max proportion |AUC |</td>
-</tr>
-<tr class="even">
-<td align="left">|:–|:——–|:———————————|:——————–|:————–|:—–|</td>
-</tr>
-<tr class="odd">
-<td align="left">|2 |Bitter |Starch-Limonene Inclusion Complex |21 |0.5 |37.63 |</td>
-</tr>
-<tr class="even">
-<td align="left">|4 |Citrus |Starch-Limonene Inclusion Complex |20 |0.7 |61.66 |</td>
-</tr>
-<tr class="odd">
-<td align="left">|6 |Cohesive |Starch-Limonene Inclusion Complex |57 |0.84 |83.07 |</td>
-</tr>
-<tr class="even">
-<td align="left">|8 |Sour |Starch-Limonene Inclusion Complex |18 |0.36 |15.43 |</td>
-</tr>
-<tr class="odd">
-<td align="left">|10 |Stale |Starch-Limonene Inclusion Complex |118 |0.54 |33.9 |</td>
-</tr>
-<tr class="even">
-<td align="left">|12 |Sweet |Starch-Limonene Inclusion Complex |18 |0.55 |49.32 |</td>
-</tr>
-</tbody>
-</table>
+<p>knitr::kable(t1) knitr::kable(t2)</p>
 <br>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
