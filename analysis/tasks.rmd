@@ -8,7 +8,7 @@ date: "2024-03-02"
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## Demographics analysis
+## Task 1: Demographics representation in forensic genetics database
 ```{r echo=FALSE, results = 'hide',include=FALSE}
 library(tidyverse)
 library(reshape)
@@ -49,6 +49,9 @@ ggplot(merged_data, aes(x = Demographic.Group, y = State, fill = Difference)) +
   xlab(c(""))+ ylab(c("")) +
   theme(axis.text=element_text(size=12),legend.text=element_text(size=12))
 ```
+
+## Task 2: Flavor detection time series analysis
+
 ```{r flavor}
 flavor = read.csv("/home/hannah/interview/data/df_flavor.csv")
 names = c()
