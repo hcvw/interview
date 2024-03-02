@@ -5,7 +5,7 @@ date: "2024-03-02"
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
 ```
 
 ## Task 1: Demographics representation in forensic genetics database
@@ -37,7 +37,7 @@ merged_data <- database_data %>%
 merged_data[is.na(merged_data)] <- 0
 ```
 
-```{r cars-plot, dev='png',fig.asp=0.5, include=FALSE}
+```{r cars-plot, dev='png',fig.asp=0.5}
 ggplot(merged_data, aes(x = Demographic.Group, y = State, fill = Difference)) +
   geom_tile(color = "white",size=2) + 
   geom_text(aes(label = round(Difference, 3)),size=5) +
