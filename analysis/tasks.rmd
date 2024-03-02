@@ -34,7 +34,6 @@ merged_data <- database_data %>%
   dplyr::rename(Value_Database = Value.x, Value_Population = Value.y) %>%
   mutate(Difference = Value_Database - Value_Population)
 
-merged_data[is.na(merged_data)] <- 0
 ```
 
 ```{r cars-plot, dev='png',fig.width=12, fig.height=8,fig.asp=0.25}
