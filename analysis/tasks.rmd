@@ -68,7 +68,7 @@ flavor_long <- flavor_long %>%
   summarise(proportion = mean(value))
 
 ggplot(flavor_long) + 
-  geom_point(aes(x = time, y=proportion,color=Attribute)) + 
+  geom_line(aes(x = time, y=proportion,color=Attribute)) + 
   facet_wrap(.~Sample_Name) +
   theme_classic()
 
