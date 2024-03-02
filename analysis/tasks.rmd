@@ -116,7 +116,8 @@ t2
 ### This is a measure of association for binary events, capturing the probability they are observed together relative to them being independent:
 
 $$
-pmi = \frac{p(flavor 1 | flavor 2)}{p(flavor 1)}
+pmi_t = \frac{p(flavor_1 | flavor_2)}{p(flavor_1)}
+\bar{pmi} = \frac{\sum_{t=1}^{120}{pmi_t}}{120}
 $$
 
 
