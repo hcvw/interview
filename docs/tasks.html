@@ -507,16 +507,16 @@ data/df_flavor.csv
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrong7dda0b0"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> 7dda0b0 </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrong3fb4bbc"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> 3fb4bbc </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrong7dda0b0" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrong3fb4bbc" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version 7dda0b0. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version 3fb4bbc. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -564,6 +564,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+3fb4bbc
+</td>
+<td>
+Hannah Van Wyk
+</td>
+<td>
+2024-03-02
+</td>
+<td>
+Start my new project
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+3d448d2
+</td>
+<td>
+Hannah Van Wyk
+</td>
+<td>
+2024-03-02
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -1185,7 +1219,7 @@ merged_data &lt;- database_data %&gt;%
   mutate(Difference = Value_Database - Value_Population)</code></pre>
 <pre class="r"><code>ggplot(merged_data, aes(x = Demographic.Group, y = State, fill = Difference)) +
   geom_tile(color = &quot;white&quot;,size=2) + 
-  geom_text(aes(label = round(Difference, 3)),size=3) +
+  geom_text(aes(label = round(Difference, 3)),size=5) +
   scale_fill_gradientn(colours = c(&quot;#7074c0&quot;, &quot;#f1f1f1&quot;, &quot;#baad03&quot;),
                       values = scales::rescale(c(-0.5, -0.05, 0, 0.05, 0.5)),
                       labels = c(&quot;Very underrepresented in Dataset&quot;,&quot;&quot;,&quot;Equally represented&quot;,&quot;&quot;,&quot;Very overrepresented in Dataset&quot;)) +
@@ -1193,7 +1227,7 @@ merged_data &lt;- database_data %&gt;%
   labs(fill=&#39;&#39;) +
   xlab(c(&quot;&quot;))+ ylab(c(&quot;&quot;)) +
   theme(axis.text=element_text(size=12),legend.text=element_text(size=12))</code></pre>
-<p><img src="figure/tasks.rmd/cars-plot-1.png" width="1152" style="display: block; margin: auto;" /></p>
+<p><img src="figure/tasks.rmd/cars-plot-1.png" width="960" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-cars-plot-1">
 Past versions of cars-plot-1.png
@@ -1216,6 +1250,17 @@ Date
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+3d448d2
+</td>
+<td>
+Hannah Van Wyk
+</td>
+<td>
+2024-03-02
+</td>
+</tr>
 <tr>
 <td>
 48e1615
@@ -1359,7 +1404,7 @@ for (flavor in unique(flavor_long$Attribute)) {
 }</code></pre>
 <pre class="r"><code>print(xtable(results),include.rownames=FALSE, type = &quot;html&quot;)</code></pre>
 <!-- html table generated in R 4.3.1 by xtable 1.8-4 package -->
-<!-- Sat Mar  2 14:16:08 2024 -->
+<!-- Sat Mar  2 14:16:35 2024 -->
 <table border="1">
 <tr>
 <th>
