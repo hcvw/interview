@@ -14,6 +14,7 @@ library(tidyverse)
 library(reshape)
 library(xtable)
 library(DescTools)
+library(knitr)
 ```
 
 
@@ -98,15 +99,19 @@ for (flavor in unique(flavor_long$Attribute)) {
 ```
 
 ## Starch-Limonene Inclusion Complex results
-```{r, results='asis'}
-results_g2 = results[which(results$Gum == "Starch-Limonene Inclusion Complex"),]
-print(xtable(results_g2[,c(1,3,4,5)]),include.rownames=FALSE, type = "html")
-```
-
 ## Free Limonene results
-```{r, results='asis'}
+```{r, echo = FALSE, results = 'asis', warning = F}
 results_g1 = results[which(results$Gum == "Free Limonene"),]
-print(xtable(results_g1[,c(1,3,4,5)]),include.rownames=FALSE, type = "html")
+results_g2 = results[which(results$Gum == "Starch-Limonene Inclusion Complex"),]
+
+t1 <- kable(results_g1, format = "latex", booktabs = TRUE)
+t2 <- kable(results_g2, format = "latex", booktabs = TRUE)
+
+cat(c("\\begin{table}[h] \\centering ", 
+      t1,
+    "\\hspace{1cm} \\centering ",
+      t2,
+    "\\caption{My tables} \\end{table}"))  
 ```
 
 
