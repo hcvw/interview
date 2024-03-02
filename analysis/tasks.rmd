@@ -37,7 +37,7 @@ merged_data <- database_data %>%
 merged_data[is.na(merged_data)] <- 0
 ```
 
-```{r cars-plot, dev='png',out.width="100%",fig.asp=0.25}
+```{r cars-plot, dev='png',fig.width=12, fig.height=8,fig.asp=0.25}
 ggplot(merged_data, aes(x = Demographic.Group, y = State, fill = Difference)) +
   geom_tile(color = "white",size=2) + 
   geom_text(aes(label = round(Difference, 3)),size=3) +
