@@ -507,16 +507,16 @@ data/df_flavor.csv
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrong40bc209"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> 40bc209 </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongefbb395"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> efbb395 </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrong40bc209" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongefbb395" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version 40bc209. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version efbb395. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -564,6 +564,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+efbb395
+</td>
+<td>
+Hannah Van Wyk
+</td>
+<td>
+2024-03-02
+</td>
+<td>
+Start my new project
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+c490ea1
+</td>
+<td>
+Hannah Van Wyk
+</td>
+<td>
+2024-03-02
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -794,6 +828,54 @@ merged_data &lt;- database_data %&gt;%
   mutate(Difference = Value_Database - Value_Population)
 
 merged_data[is.na(merged_data)] &lt;- 0</code></pre>
+<pre class="r"><code>ggplot(merged_data, aes(x = Demographic.Group, y = State, fill = Difference)) +
+  geom_tile(color = &quot;white&quot;,size=2) + 
+  geom_text(aes(label = round(Difference, 3)),size=5) +
+  scale_fill_gradientn(colours = c(&quot;#7074c0&quot;, &quot;#f1f1f1&quot;, &quot;#baad03&quot;),
+                      values = scales::rescale(c(-0.5, -0.05, 0, 0.05, 0.5)),
+                      labels = c(&quot;20% Underrepresented in Dataset&quot;,&quot;&quot;,&quot;Equally represented&quot;,&quot;&quot;,&quot;20% Overrepresented in Dataset&quot;)) +
+  theme_classic() +
+  labs(fill=&#39;&#39;) +
+  xlab(c(&quot;&quot;))+ ylab(c(&quot;&quot;)) +
+  theme(axis.text=element_text(size=12),legend.text=element_text(size=12))</code></pre>
+<p><img src="figure/tasks.rmd/cars-plot-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-cars-plot-1">
+Past versions of cars-plot-1.png
+</button>
+</p>
+<div id="fig-cars-plot-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+2fd5e5d
+</td>
+<td>
+Hannah Van Wyk
+</td>
+<td>
+2024-03-02
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="task-2-flavor-detection-time-series-analysis" class="section level2">
 <h2>Task 2: Flavor detection time series analysis</h2>
@@ -809,10 +891,9 @@ flavor_long &lt;- flavor_long %&gt;%
   mutate(time = str_remove(variable, &quot;time_&quot;)) %&gt;%
   mutate(time = as.numeric(str_remove(time, &quot;s&quot;))) %&gt;% 
   group_by(time,Attribute,Sample_Name,Blinding_Code) %&gt;% 
-  summarise(proportion = mean(value))</code></pre>
-<pre><code>`summarise()` has grouped output by &#39;time&#39;, &#39;Attribute&#39;, &#39;Sample_Name&#39;. You can
-override using the `.groups` argument.</code></pre>
-<pre class="r"><code>ggplot(flavor_long) + 
+  summarise(proportion = mean(value))
+
+ggplot(flavor_long) + 
   geom_point(aes(x = time, y=proportion,color=Attribute)) + 
   facet_wrap(.~Sample_Name) +
   theme_classic()</code></pre>
@@ -879,7 +960,7 @@ for (flavor in unique(flavor_long$Attribute)) {
 }</code></pre>
 <pre class="r"><code>print(xtable(results), type = &quot;html&quot;)</code></pre>
 <!-- html table generated in R 4.3.1 by xtable 1.8-4 package -->
-<!-- Sat Mar  2 14:03:03 2024 -->
+<!-- Sat Mar  2 14:03:56 2024 -->
 <table border="1">
 <tr>
 <th>
@@ -1186,17 +1267,16 @@ loaded via a namespace (and not attached):
 [21] lifecycle_1.0.3   farver_2.1.1      compiler_4.3.1    git2r_0.33.0     
 [25] Exact_3.2         munsell_0.5.0     getPass_0.2-4     httpuv_1.6.11    
 [29] class_7.3-22      htmltools_0.5.6   sass_0.4.7        yaml_2.3.7       
-[33] crayon_1.5.2      later_1.3.1       pillar_1.9.0      jquerylib_0.1.4  
-[37] whisker_0.4.1     MASS_7.3-60       cachem_1.0.8      boot_1.3-28      
-[41] tidyselect_1.2.0  digest_0.6.33     mvtnorm_1.2-2     stringi_1.7.12   
-[45] labeling_0.4.2    rprojroot_2.0.3   fastmap_1.1.1     grid_4.3.1       
-[49] expm_0.999-7      colorspace_2.1-0  lmom_3.0          cli_3.6.1        
-[53] magrittr_2.0.3    utf8_1.2.3        e1071_1.7-13      withr_2.5.0      
-[57] scales_1.2.1      promises_1.2.1    timechange_0.2.0  rmarkdown_2.25   
-[61] httr_1.4.7        cellranger_1.1.0  hms_1.1.3         evaluate_0.21    
-[65] knitr_1.45        rlang_1.1.1       Rcpp_1.0.11       glue_1.6.2       
-[69] rstudioapi_0.15.0 jsonlite_1.8.7    R6_2.5.1          plyr_1.8.8       
-[73] fs_1.6.3         </code></pre>
+[33] later_1.3.1       pillar_1.9.0      jquerylib_0.1.4   whisker_0.4.1    
+[37] MASS_7.3-60       cachem_1.0.8      boot_1.3-28       tidyselect_1.2.0 
+[41] digest_0.6.33     mvtnorm_1.2-2     stringi_1.7.12    labeling_0.4.2   
+[45] rprojroot_2.0.3   fastmap_1.1.1     grid_4.3.1        expm_0.999-7     
+[49] colorspace_2.1-0  lmom_3.0          cli_3.6.1         magrittr_2.0.3   
+[53] utf8_1.2.3        e1071_1.7-13      withr_2.5.0       scales_1.2.1     
+[57] promises_1.2.1    timechange_0.2.0  rmarkdown_2.25    httr_1.4.7       
+[61] cellranger_1.1.0  hms_1.1.3         evaluate_0.21     knitr_1.45       
+[65] rlang_1.1.1       Rcpp_1.0.11       glue_1.6.2        rstudioapi_0.15.0
+[69] jsonlite_1.8.7    R6_2.5.1          plyr_1.8.8        fs_1.6.3         </code></pre>
 </div>
 </div>
 
