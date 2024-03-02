@@ -102,7 +102,7 @@ for (flavor in unique(flavor_long$Attribute)) {
 results_g1 = results[which(results$Gum == "Free Limonene"),]
 results_g2 = results[which(results$Gum == "Starch-Limonene Inclusion Complex"),]
 
-t1 <- kable(results_g1, format = "latex", booktabs = TRUE)
+t1 <- kable(results_g1)
 t2 <- kable(results_g2, format = "latex", booktabs = TRUE)
 knitr::kable(t1)
 ```
