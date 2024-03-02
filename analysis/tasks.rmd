@@ -1,5 +1,5 @@
 ---
-title: "Lasisi lab interview"
+title: "Lab interview"
 output: html_document
 date: "2024-03-02"
 ---
@@ -36,7 +36,7 @@ merged_data <- database_data %>%
 
 ```
 
-```{r cars-plot, dev='png',fig.width=10, fig.height=10,fig.asp=0.25}
+```{r cars-plot, dev='png',fig.width=10, fig.height=20,fig.asp=0.25}
 ggplot(merged_data, aes(x = Demographic.Group, y = State, fill = Difference)) +
   geom_tile(color = "white",size=2) + 
   geom_text(aes(label = round(Difference, 3)),size=4) +
