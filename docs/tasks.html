@@ -515,16 +515,16 @@ data/df_flavor.csv
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomhcvwinterviewtree38dea1c4a594084fcb5baab74a2e49f03603a145targetblank38dea1ca"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/hcvw/interview/tree/38dea1c4a594084fcb5baab74a2e49f03603a145" target="_blank">38dea1c</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomhcvwinterviewtreef4e79ceacf09517e43f466b4de1fa62f85f4dd61targetblankf4e79cea"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/hcvw/interview/tree/f4e79ceacf09517e43f466b4de1fa62f85f4dd61" target="_blank">f4e79ce</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomhcvwinterviewtree38dea1c4a594084fcb5baab74a2e49f03603a145targetblank38dea1ca" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomhcvwinterviewtreef4e79ceacf09517e43f466b4de1fa62f85f4dd61targetblankf4e79cea" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/hcvw/interview/tree/38dea1c4a594084fcb5baab74a2e49f03603a145" target="_blank">38dea1c</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/hcvw/interview/tree/f4e79ceacf09517e43f466b4de1fa62f85f4dd61" target="_blank">f4e79ce</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -572,6 +572,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/hcvw/interview/blob/f4e79ceacf09517e43f466b4de1fa62f85f4dd61/analysis/tasks.rmd" target="_blank">f4e79ce</a>
+</td>
+<td>
+Hannah Van Wyk
+</td>
+<td>
+2024-03-02
+</td>
+<td>
+Start my new project
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/hcvw/interview/19f47e87cd5c2018535d60bcef60bdc45f59d0a1/docs/tasks.html" target="_blank">19f47e8</a>
+</td>
+<td>
+Hannah Van Wyk
+</td>
+<td>
+2024-03-02
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -2201,24 +2235,17 @@ for (flavor in unique(flavor_long$Attribute)) {
     i = i + 1
   }
 }</code></pre>
-</div>
-<div id="starch-limonene-inclusion-complex-results" class="section level2">
-<h2>Starch-Limonene Inclusion Complex results</h2>
-</div>
-<div id="free-limonene-results" class="section level2">
-<h2>Free Limonene results</h2>
 <pre class="r"><code>results_g1 = results[which(results$Gum == &quot;Free Limonene&quot;),]
 results_g2 = results[which(results$Gum == &quot;Starch-Limonene Inclusion Complex&quot;),]
 
 t1 &lt;- kable(results_g1, format = &quot;latex&quot;, booktabs = TRUE)
 t2 &lt;- kable(results_g2, format = &quot;latex&quot;, booktabs = TRUE)
 
-print(cat(c(&quot;\\begin{table}[h] \\centering &quot;, 
+cat(c(&quot;\\begin{table}[h] \\centering &quot;, 
       t1,
     &quot;\\hspace{1cm} \\centering &quot;,
       t2,
-    &quot;\\caption{My tables} \\end{table}&quot;))  )</code></pre>
-<p>NULL</p>
+    &quot;\\caption{My tables} \\end{table}&quot;))</code></pre>
 <br>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
