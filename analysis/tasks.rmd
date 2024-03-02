@@ -98,8 +98,8 @@ for (flavor in unique(flavor_long$Attribute)) {
 ```
 
 ```{r, results='asis'}
-results_g1 = results[which(results$Sample_Name == "Free Limonene"),]
-results_g2 = results[which(results$Sample_Name == "Starch-Limonene Inclusion Complex"),]
+results_g1 = results[which(results$Gum == "Free Limonene"),]
+results_g2 = results[which(results$Gum == "Starch-Limonene Inclusion Complex"),]
 
 print(xtable(results_g1),include.rownames=FALSE, type = "html")
 print(xtable(results_g2),include.rownames=FALSE, type = "html")
