@@ -515,16 +515,16 @@ data/df_flavor.csv
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomhcvwinterviewtreefab0ffcfce53f88ee94f9ab3dcfa45d489033454targetblankfab0ffca"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/hcvw/interview/tree/fab0ffcfce53f88ee94f9ab3dcfa45d489033454" target="_blank">fab0ffc</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomhcvwinterviewtreebc61adfb1a5a09d0af922c76d1d2d5b699206a1dtargetblankbc61adfa"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/hcvw/interview/tree/bc61adfb1a5a09d0af922c76d1d2d5b699206a1d" target="_blank">bc61adf</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomhcvwinterviewtreefab0ffcfce53f88ee94f9ab3dcfa45d489033454targetblankfab0ffca" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomhcvwinterviewtreebc61adfb1a5a09d0af922c76d1d2d5b699206a1dtargetblankbc61adfa" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/hcvw/interview/tree/fab0ffcfce53f88ee94f9ab3dcfa45d489033454" target="_blank">fab0ffc</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/hcvw/interview/tree/bc61adfb1a5a09d0af922c76d1d2d5b699206a1d" target="_blank">bc61adf</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -572,6 +572,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/hcvw/interview/blob/bc61adfb1a5a09d0af922c76d1d2d5b699206a1d/analysis/tasks.rmd" target="_blank">bc61adf</a>
+</td>
+<td>
+Hannah Van Wyk
+</td>
+<td>
+2024-03-02
+</td>
+<td>
+Start my new project
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/hcvw/interview/5e2d623273b771f9444035580dcf3df6e05fc202/docs/tasks.html" target="_blank">5e2d623</a>
+</td>
+<td>
+Hannah Van Wyk
+</td>
+<td>
+2024-03-02
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -2031,12 +2065,12 @@ for (flavor in unique(flavor_long$Attribute)) {
     i = i + 1
   }
 }</code></pre>
-<pre class="r"><code>results_g1 = results[which(results$Sample_Name == &quot;Free Limonene&quot;),]
-results_g2 = results[which(results$Sample_Name == &quot;Starch-Limonene Inclusion Complex&quot;),]
+<pre class="r"><code>results_g1 = results[which(results$Gum == &quot;Free Limonene&quot;),]
+results_g2 = results[which(results$Gum == &quot;Starch-Limonene Inclusion Complex&quot;),]
 
 print(xtable(results_g1),include.rownames=FALSE, type = &quot;html&quot;)</code></pre>
 <!-- html table generated in R 4.3.1 by xtable 1.8-4 package -->
-<!-- Sat Mar  2 14:47:53 2024 -->
+<!-- Sat Mar  2 14:48:22 2024 -->
 <table border="1">
 <tr>
 <th>
@@ -2055,10 +2089,112 @@ Max proportion
 AUC
 </th>
 </tr>
+<tr>
+<td>
+Bitter
+</td>
+<td>
+Free Limonene
+</td>
+<td>
+118
+</td>
+<td>
+0.19
+</td>
+<td>
+15.09
+</td>
+</tr>
+<tr>
+<td>
+Citrus
+</td>
+<td>
+Free Limonene
+</td>
+<td>
+41
+</td>
+<td>
+0.64
+</td>
+<td>
+56.7
+</td>
+</tr>
+<tr>
+<td>
+Cohesive
+</td>
+<td>
+Free Limonene
+</td>
+<td>
+71
+</td>
+<td>
+0.87
+</td>
+<td>
+88.47
+</td>
+</tr>
+<tr>
+<td>
+Sour
+</td>
+<td>
+Free Limonene
+</td>
+<td>
+18
+</td>
+<td>
+0.17
+</td>
+<td>
+8.82
+</td>
+</tr>
+<tr>
+<td>
+Stale
+</td>
+<td>
+Free Limonene
+</td>
+<td>
+119
+</td>
+<td>
+0.48
+</td>
+<td>
+23.39
+</td>
+</tr>
+<tr>
+<td>
+Sweet
+</td>
+<td>
+Free Limonene
+</td>
+<td>
+22
+</td>
+<td>
+0.83
+</td>
+<td>
+71.95
+</td>
+</tr>
 </table>
 <pre class="r"><code>print(xtable(results_g2),include.rownames=FALSE, type = &quot;html&quot;)</code></pre>
 <!-- html table generated in R 4.3.1 by xtable 1.8-4 package -->
-<!-- Sat Mar  2 14:47:53 2024 -->
+<!-- Sat Mar  2 14:48:22 2024 -->
 <table border="1">
 <tr>
 <th>
@@ -2076,6 +2212,108 @@ Max proportion
 <th>
 AUC
 </th>
+</tr>
+<tr>
+<td>
+Bitter
+</td>
+<td>
+Starch-Limonene Inclusion Complex
+</td>
+<td>
+21
+</td>
+<td>
+0.5
+</td>
+<td>
+37.63
+</td>
+</tr>
+<tr>
+<td>
+Citrus
+</td>
+<td>
+Starch-Limonene Inclusion Complex
+</td>
+<td>
+20
+</td>
+<td>
+0.7
+</td>
+<td>
+61.66
+</td>
+</tr>
+<tr>
+<td>
+Cohesive
+</td>
+<td>
+Starch-Limonene Inclusion Complex
+</td>
+<td>
+57
+</td>
+<td>
+0.84
+</td>
+<td>
+83.07
+</td>
+</tr>
+<tr>
+<td>
+Sour
+</td>
+<td>
+Starch-Limonene Inclusion Complex
+</td>
+<td>
+18
+</td>
+<td>
+0.36
+</td>
+<td>
+15.43
+</td>
+</tr>
+<tr>
+<td>
+Stale
+</td>
+<td>
+Starch-Limonene Inclusion Complex
+</td>
+<td>
+118
+</td>
+<td>
+0.54
+</td>
+<td>
+33.9
+</td>
+</tr>
+<tr>
+<td>
+Sweet
+</td>
+<td>
+Starch-Limonene Inclusion Complex
+</td>
+<td>
+18
+</td>
+<td>
+0.55
+</td>
+<td>
+49.32
+</td>
 </tr>
 </table>
 <br>
