@@ -73,14 +73,14 @@ ggplot(flavor_long) +
   theme_classic()
 
 results = as.data.frame(matrix(nrow = length(unique(flavor_long$Attribute)),ncol = 5))
-colnames(results) = c("Flavor","Gum", "Time to Peak (TTP)", "Max proportion","AUC")
+colnames(results) = c("Flavor","Gum", "Time to Peak (mins.)", "Max proportion","AUC")
 i = 1
 for (flavor in unique(flavor_long$Attribute)) {
   for(gum in unique(flavor_long$Sample_Name)){
     df = flavor_long[which(flavor_long$Attribute == flavor & flavor_long$Sample_Name == gum),]
     
     # calculate AUC: measure of how much the flavor was detected overall
-    AUC = AUC(df$time, df$proportion)
+    AUC = round(AUC(df$time, df$proportion),2)
     
     # calculate tMax: time that it took to detect maximum proportion
     # of people detecting that flavor
