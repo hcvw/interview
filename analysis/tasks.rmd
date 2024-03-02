@@ -108,6 +108,10 @@ t1
 t2
 ```
 
+## Potential analysis: calculate Pointwise mutual information
+## between each flavor combination to see which flavors are most commonly detected together
+
+
 
 
 
