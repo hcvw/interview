@@ -9,12 +9,15 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ## Demographics analysis
-```{r cars}
+```{r echo=FALSE}
 library(tidyverse)
 library(reshape)
 library(xtable)
 library(DescTools)
+```
 
+
+```{r}
 sb = read.csv("/home/hannah/interview/data/df_state-breakdown.csv")
 st = read.csv("/home/hannah/interview/data/df_state_total.csv")
 
