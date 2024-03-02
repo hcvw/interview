@@ -507,16 +507,16 @@ data/df_flavor.csv
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrong8158e44"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> 8158e44 </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrong2fd5e5d"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> 2fd5e5d </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrong8158e44" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrong2fd5e5d" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version 8158e44. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version 2fd5e5d. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -564,6 +564,23 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+html
+</td>
+<td>
+2fd5e5d
+</td>
+<td>
+Hannah Van Wyk
+</td>
+<td>
+2024-03-02
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -652,6 +669,43 @@ This warning is displayed once every 8 hours.
 Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
 generated.</code></pre>
 <p><img src="figure/tasks.rmd/cars-plot-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-cars-plot-1">
+Past versions of cars-plot-1.png
+</button>
+</p>
+<div id="fig-cars-plot-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+2fd5e5d
+</td>
+<td>
+Hannah Van Wyk
+</td>
+<td>
+2024-03-02
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre class="r"><code>flavor = read.csv(&quot;/home/hannah/interview/data/df_flavor.csv&quot;)
 names = c()
 for (i in 1:120){
@@ -672,6 +726,43 @@ override using the `.groups` argument.</code></pre>
   facet_wrap(.~Sample_Name) +
   theme_classic()</code></pre>
 <p><img src="figure/tasks.rmd/flavor-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-flavor-1">
+Past versions of flavor-1.png
+</button>
+</p>
+<div id="fig-flavor-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+2fd5e5d
+</td>
+<td>
+Hannah Van Wyk
+</td>
+<td>
+2024-03-02
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre class="r"><code>results = as.data.frame(matrix(nrow = length(unique(flavor_long$Attribute)),ncol = 5))
 colnames(results) = c(&quot;Flavor&quot;,&quot;Gum&quot;, &quot;Time to Peak (TTP)&quot;, &quot;Max proportion&quot;,&quot;AUC&quot;)
 i = 1
@@ -697,7 +788,7 @@ for (flavor in unique(flavor_long$Attribute)) {
 }</code></pre>
 <pre class="r"><code>print(xtable(results), type = &quot;html&quot;)</code></pre>
 <!-- html table generated in R 4.3.1 by xtable 1.8-4 package -->
-<!-- Sat Mar  2 13:57:19 2024 -->
+<!-- Sat Mar  2 13:58:02 2024 -->
 <table border="1">
 <tr>
 <th>
