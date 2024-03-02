@@ -111,12 +111,12 @@ t2 <- kable(results_g2[,c(1,3,4,5)])
 t2
 ```
 
-### Potential analysis: calculate Pointwise mutual information between each flavor combination.
+### Potential analysis: calculate pointwise mutual information (pmi) between each flavor combination.
 
 ### This is a measure of association for binary events, capturing the probability they are observed together relative to them being independent:
 
 $$
-\frac{1}{2}
+pmi = \frac{p(flavor 1 | flavor 2)}{p(flavor 1)}
 $$
 
 
