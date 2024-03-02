@@ -507,16 +507,16 @@ data/df_flavor.csv
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongc4a11c9"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> c4a11c9 </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongf10f92e"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> f10f92e </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongc4a11c9" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongf10f92e" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version c4a11c9. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version f10f92e. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -564,6 +564,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+f10f92e
+</td>
+<td>
+Hannah Van Wyk
+</td>
+<td>
+2024-03-02
+</td>
+<td>
+Start my new project
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+48e1615
+</td>
+<td>
+Hannah Van Wyk
+</td>
+<td>
+2024-03-02
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -1152,6 +1186,17 @@ Date
 <tbody>
 <tr>
 <td>
+48e1615
+</td>
+<td>
+Hannah Van Wyk
+</td>
+<td>
+2024-03-02
+</td>
+</tr>
+<tr>
+<td>
 765a045
 </td>
 <td>
@@ -1205,7 +1250,7 @@ flavor_long &lt;- flavor_long %&gt;%
   summarise(proportion = mean(value))
 
 ggplot(flavor_long) + 
-  geom_point(aes(x = time, y=proportion,color=Attribute)) + 
+  geom_line(aes(x = time, y=proportion,color=Attribute)) + 
   facet_wrap(.~Sample_Name) +
   theme_classic()</code></pre>
 <p><img src="figure/tasks.rmd/flavor-1.png" width="672" style="display: block; margin: auto;" /></p>
@@ -1271,7 +1316,7 @@ for (flavor in unique(flavor_long$Attribute)) {
 }</code></pre>
 <pre class="r"><code>print(xtable(results),include.rownames=FALSE, type = &quot;html&quot;)</code></pre>
 <!-- html table generated in R 4.3.1 by xtable 1.8-4 package -->
-<!-- Sat Mar  2 14:14:23 2024 -->
+<!-- Sat Mar  2 14:14:52 2024 -->
 <table border="1">
 <tr>
 <th>
