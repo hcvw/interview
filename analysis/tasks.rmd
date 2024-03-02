@@ -1,0 +1,101 @@
+---
+title: "Lasisi lab interview"
+output: html_document
+date: "2024-03-02"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Demographics analysis
+```{r cars}
+library(tidyverse)
+library(reshape)
+library(xtable)
+library(DescTools)
+
+sb = read.csv("/home/hannah/interview/data/df_state-breakdown.csv")
+st = read.csv("/home/hannah/interview/data/df_state_total.csv")
+
+sb <- sb %>%
+  mutate(Value = as.numeric(str_remove(Value, "%")) / 100)
+
+# Separate the data into database and population datasets
+database_data <- sb %>% filter(Context == "Database")
+population_data <- sb %>% filter(Context == "Population")
+
+# Merge the two datasets
+merged_data <- database_data %>%
+  inner_join(population_data, by = c("State", "Demographic.Group")) %>%
+  dplyr::rename(Value_Database = Value.x, Value_Population = Value.y) %>%
+  mutate(Difference = Value_Database - Value_Population)
+
+merged_data[is.na(merged_data)] <- 0
+```
+
+```{r cars-plot, dev='png',fig.asp=0.5,}
+ggplot(merged_data, aes(x = Demographic.Group, y = State, fill = Difference)) +
+  geom_tile(color = "white",size=2) + 
+  geom_text(aes(label = round(Difference, 3)),size=5) +
+  scale_fill_gradientn(colours = c("#7074c0", "#f1f1f1", "#baad03"),
+                      values = scales::rescale(c(-0.5, -0.05, 0, 0.05, 0.5)),
+                      labels = c("20% Underrepresented in Dataset","","Equally represented","","20% Overrepresented in Dataset")) +
+  theme_classic() +
+  labs(fill='') +
+  xlab(c(""))+ ylab(c("")) +
+  theme(axis.text=element_text(size=12),legend.text=element_text(size=12))
+```
+```{r flavor}
+flavor = read.csv("/home/hannah/interview/data/df_flavor.csv")
+names = c()
+for (i in 1:120){
+  names[i] = paste0("time_",i,"s")
+}
+
+flavor_long = melt(flavor, measure.vars = names, variable.name = "variable_names" , value.name = "value")
+
+flavor_long <- flavor_long %>%
+  mutate(time = str_remove(variable, "time_")) %>%
+  mutate(time = as.numeric(str_remove(time, "s"))) %>% 
+  group_by(time,Attribute,Sample_Name,Blinding_Code) %>% 
+  summarise(proportion = mean(value))
+
+ggplot(flavor_long) + 
+  geom_point(aes(x = time, y=proportion,color=Attribute)) + 
+  facet_wrap(.~Sample_Name) +
+  theme_classic()
+
+results = as.data.frame(matrix(nrow = length(unique(flavor_long$Attribute)),ncol = 5))
+colnames(results) = c("Flavor","Gum", "Time to Peak (TTP)", "Max proportion","AUC")
+i = 1
+for (flavor in unique(flavor_long$Attribute)) {
+  for(gum in unique(flavor_long$Sample_Name)){
+    df = flavor_long[which(flavor_long$Attribute == flavor & flavor_long$Sample_Name == gum),]
+    
+    # calculate AUC: measure of how much the flavor was detected overall
+    AUC = AUC(df$time, df$proportion)
+    
+    # calculate tMax: time that it took to detect maximum proportion
+    # of people detecting that flavor
+    tmax = which.max(df$proportion)
+    
+    # calculate maxp: maximum proportion of people that detected
+    # a flavor at a given time
+    max_p = max(df$proportion)
+    
+    # add the stats to a dataframe
+    results[i,] = c(flavor,gum, tmax, max_p,AUC)
+    i = i + 1
+  }
+}
+```
+
+```{r, results='asis'}
+print(xtable(results), type = "html")
+```
+
+
+
+
+
