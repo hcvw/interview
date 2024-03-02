@@ -97,19 +97,21 @@ for (flavor in unique(flavor_long$Attribute)) {
   }
 }
 ```
-
+## Free Limonene gum
 ```{r,results = 'asis'}
 results_g1 = results[which(results$Gum == "Free Limonene"),]
-results_g2 = results[which(results$Gum == "Starch-Limonene Inclusion Complex"),]
-
-t1 <- kable(results_g1)
-t2 <- kable(results_g2)
+t1 <- kable(results_g1[,c(1,3,4,5)])
 t1
+```
+
+## Starch-Limonene Inclusion Complex gum
+```{r,results = 'asis'}
+results_g2 = results[which(results$Gum == "Starch-Limonene Inclusion Complex"),]
+t2 <- kable(results_g2[,c(1,3,4,5)])
 t2
 ```
 
-## Potential analysis: calculate Pointwise mutual information
-## between each flavor combination to see which flavors are most commonly detected together
+### Potential analysis: calculate Pointwise mutual information between each flavor combination to see which flavors are most commonly detected together
 
 
 
