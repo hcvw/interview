@@ -111,6 +111,8 @@ t2 <- kable(results_g2[,c(1,3,4,5)])
 t2
 ```
 
+### We could figure stratify these tables based on gene types to see if the values differ between subgroups.
+
 ### Potential analysis: calculate pointwise mutual information (pmi) between each flavor combination.
 
 ### This is a measure of association for binary events, capturing the probability they are observed together relative to them being independent:
@@ -119,9 +121,7 @@ $$
 pmi = \frac{p(flavor_1 | flavor_2)}{p(flavor_1)} \\
 $$
 
-### We could either calculate this for each individual for their 120 minutes \\
-### and see if the value is different for people with different genes \\
-### or calculate across all individuals at each time point to see if it is time-varying.
+### We could either calculate this for each individual for their 120 minutes and see if the value is different for people with different genes or calculate across all individuals at each time point to see if it is time-varying on a group level.
 
 
 
