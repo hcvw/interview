@@ -15,12 +15,13 @@ library(reshape)
 library(xtable)
 library(DescTools)
 library(knitr)
+setwd("/home/hannah/interview/")
 ```
 
 
 ```{r}
-sb = read.csv("/home/hannah/interview/data/df_state-breakdown.csv")
-st = read.csv("/home/hannah/interview/data/df_state_total.csv")
+sb = read.csv("./data/df_state-breakdown.csv")
+st = read.csv("./data/df_state_total.csv")
 
 sb <- sb %>%
   mutate(Value = as.numeric(str_remove(Value, "%")) / 100)
@@ -54,7 +55,7 @@ ggplot(merged_data, aes(x = Demographic.Group, y = State, fill = Difference)) +
 ## Task 2: Flavor detection time series analysis
 
 ```{r flavor}
-flavor = read.csv("/home/hannah/interview/data/df_flavor.csv")
+flavor = read.csv("./data/df_flavor.csv")
 names = c()
 for (i in 1:120){
   names[i] = paste0("time_",i,"s")
@@ -83,12 +84,10 @@ for (flavor in unique(flavor_long$Attribute)) {
     # calculate AUC: measure of how much the flavor was detected overall
     AUC = round(AUC(df$time, df$proportion),2)
     
-    # calculate tMax: time that it took to detect maximum proportion
-    # of people detecting that flavor
+    # calculate tMax: time that it took to detect maximum proportion of people detecting that flavor
     tmax = which.max(df$proportion)
     
-    # calculate maxp: maximum proportion of people that detected
-    # a flavor at a given time
+    # calculate maxp: maximum proportion of people that detected a flavor at a given time
     max_p = max(df$proportion)
     
     # add the stats to a dataframe
@@ -114,6 +113,13 @@ t2
 ### We could further stratify these tables based on gene types to see if the values differ between subgroups.
 
 ## Individual-level analysisflavor = read.csv("./df_flavor.csv")
+```{r indiv}
+flavor = read.csv("./data/df_flavor.csv")
+names = c()
+for (i in 1:120){
+  names[i] = paste0("time_",i,"s")
+}
+
 flavor_indiv = flavor[which(flavor$Sample_ID == 1),]
 flavor_long_indiv = melt(flavor_indiv, measure.vars = names, variable.name = "variable_names" , value.name = "value")
 
@@ -127,7 +133,7 @@ ggplot(flavor_long_indiv) +
   facet_grid(Sample_Name~Attribute) +
   ggtitle("Flavor profile for Participant 1") + 
   theme_classic()
-
+```
 
 ### Potential analysis: calculate pointwise mutual information (pmi) between each flavor combination.
 
