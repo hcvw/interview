@@ -116,8 +116,12 @@ t2
 ### This is a measure of association for binary events, capturing the probability they are observed together relative to them being independent:
 
 $$
-pmi_t = \frac{p(flavor_1 | flavor_2)}{p(flavor_1)} \\
-\bar{pmi} = \frac{\sum_{t=1}^{120}{pmi_t}}{120}
+pmi = \frac{p(flavor_1 | flavor_2)}{p(flavor_1)} \\
 $$
+
+### We could either calculate this for each individual for their 120 minutes \\
+### and see if the value is different for people with different genes \\
+### or calculate across all individuals at each time point to see if it is time-varying.
+
 
 
