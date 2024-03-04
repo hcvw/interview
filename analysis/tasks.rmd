@@ -132,7 +132,7 @@ flavor_long_indiv <- flavor_long_indiv %>%
 ```{r indivplot, fig.width=10, fig.height=10}
 ggplot(flavor_long_indiv) + 
   geom_line(aes(x = time, y=value,color=Attribute)) + 
-  facet_grid(Sample_Name~Attribute) +
+  facet_grid(Attribute~Sample_Name) +
   ggtitle("Flavor profile for Participant 1") + 
   theme_classic()
 ```
