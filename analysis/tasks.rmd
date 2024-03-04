@@ -38,7 +38,7 @@ merged_data <- database_data %>%
 
 ```
 
-```{r cars-plot, dev='png',out.width="500px", out.height="300px"}
+```{r task1-plot, dev='png',out.width="500px", out.height="300px"}
 ggplot(merged_data, aes(x = Demographic.Group, y = State, fill = Difference)) +
   geom_tile(color = "white",size=2) + 
   geom_text(aes(label = round(Difference, 2)),size=3) +
@@ -112,7 +112,7 @@ t2
 
 ### We could further stratify these tables based on gene types to see if the values differ between subgroups.
 
-## Individual-level analysisflavor = read.csv("./df_flavor.csv")
+## Individual-level analysis
 ```{r indiv}
 flavor = read.csv("./data/df_flavor.csv")
 names = c()
@@ -127,7 +127,9 @@ flavor_long_indiv <- flavor_long_indiv %>%
   mutate(time = str_remove(variable, "time_")) %>%
   mutate(time = as.numeric(str_remove(time, "s"))) %>% 
   group_by(time,Attribute,Sample_Name,Blinding_Code) 
+```
 
+```{r indivplot, dev='png',out.width="500px", out.height="500px"}
 ggplot(flavor_long_indiv) + 
   geom_line(aes(x = time, y=value,color=Attribute)) + 
   facet_grid(Sample_Name~Attribute) +
