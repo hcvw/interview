@@ -111,11 +111,27 @@ t2 <- kable(results_g2[,c(1,3,4,5)])
 t2
 ```
 
-### We could figure stratify these tables based on gene types to see if the values differ between subgroups.
+### We could further stratify these tables based on gene types to see if the values differ between subgroups.
+
+## Individual-level analysisflavor = read.csv("./df_flavor.csv")
+flavor_indiv = flavor[which(flavor$Sample_ID == 1),]
+flavor_long_indiv = melt(flavor_indiv, measure.vars = names, variable.name = "variable_names" , value.name = "value")
+
+flavor_long_indiv <- flavor_long_indiv %>%
+  mutate(time = str_remove(variable, "time_")) %>%
+  mutate(time = as.numeric(str_remove(time, "s"))) %>% 
+  group_by(time,Attribute,Sample_Name,Blinding_Code) 
+
+ggplot(flavor_long_indiv) + 
+  geom_line(aes(x = time, y=value,color=Attribute)) + 
+  facet_grid(Sample_Name~Attribute) +
+  ggtitle("Flavor profile for Participant 1") + 
+  theme_classic()
+
 
 ### Potential analysis: calculate pointwise mutual information (pmi) between each flavor combination.
 
-### This is a measure of association for binary events, capturing the probability they are observed together relative to them being independent:
+### This is a measure of association for binary events, capturing the probability they are observed together relative if they were independent:
 
 $$
 pmi = \frac{p(flavor_1 | flavor_2)}{p(flavor_1)} \\
