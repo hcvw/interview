@@ -129,7 +129,7 @@ flavor_long_indiv <- flavor_long_indiv %>%
   group_by(time,Attribute,Sample_Name,Blinding_Code) 
 ```
 
-```{r indivplot, dev='png',out.width="500px", out.height="700px"}
+```{r indivplot, fig.width=10, fig.height=10}
 ggplot(flavor_long_indiv) + 
   geom_line(aes(x = time, y=value,color=Attribute)) + 
   facet_grid(Sample_Name~Attribute) +
