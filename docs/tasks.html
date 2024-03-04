@@ -485,26 +485,10 @@ relative
 <tbody>
 <tr>
 <td style="text-align:left;">
-/home/hannah/interview/data/df_state-breakdown.csv
+/home/hannah/interview/
 </td>
 <td style="text-align:left;">
-data/df_state-breakdown.csv
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-/home/hannah/interview/data/df_state_total.csv
-</td>
-<td style="text-align:left;">
-data/df_state_total.csv
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-/home/hannah/interview/data/df_flavor.csv
-</td>
-<td style="text-align:left;">
-data/df_flavor.csv
+.
 </td>
 </tr>
 </tbody>
@@ -515,21 +499,24 @@ data/df_flavor.csv
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomhcvwinterviewtreeb93a89bf37a20d723b4b00c23cc3e743976aa313targetblankb93a89ba"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/hcvw/interview/tree/b93a89bf37a20d723b4b00c23cc3e743976aa313" target="_blank">b93a89b</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomhcvwinterviewtree938c1f2286a991e1b4368052ae3cbb53bf57ef90targetblank938c1f2a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/hcvw/interview/tree/938c1f2286a991e1b4368052ae3cbb53bf57ef90" target="_blank">938c1f2</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomhcvwinterviewtreeb93a89bf37a20d723b4b00c23cc3e743976aa313targetblankb93a89ba" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomhcvwinterviewtree938c1f2286a991e1b4368052ae3cbb53bf57ef90targetblank938c1f2a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/hcvw/interview/tree/b93a89bf37a20d723b4b00c23cc3e743976aa313" target="_blank">b93a89b</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/hcvw/interview/tree/938c1f2286a991e1b4368052ae3cbb53bf57ef90" target="_blank">938c1f2</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
 </p>
 <pre><code>
+Ignored files:
+    Ignored:    analysis/figure/
+
 Untracked files:
     Untracked:  data/df_flavor.csv
     Untracked:  data/df_state-breakdown.csv
@@ -572,6 +559,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/hcvw/interview/blob/938c1f2286a991e1b4368052ae3cbb53bf57ef90/analysis/tasks.rmd" target="_blank">938c1f2</a>
+</td>
+<td>
+Hannah Van Wyk
+</td>
+<td>
+2024-03-04
+</td>
+<td>
+Start my new project
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/hcvw/interview/60c6511f42ccbcee78538a2c30bf8dc25f243983/docs/tasks.html" target="_blank">60c6511</a>
+</td>
+<td>
+Hannah Van Wyk
+</td>
+<td>
+2024-03-04
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -2621,8 +2642,8 @@ Start my new project
 </div>
 <div id="task-1-demographics-representation-in-forensic-genetics-database" class="section level2">
 <h2>Task 1: Demographics representation in forensic genetics database</h2>
-<pre class="r"><code>sb = read.csv(&quot;/home/hannah/interview/data/df_state-breakdown.csv&quot;)
-st = read.csv(&quot;/home/hannah/interview/data/df_state_total.csv&quot;)
+<pre class="r"><code>sb = read.csv(&quot;./data/df_state-breakdown.csv&quot;)
+st = read.csv(&quot;./data/df_state_total.csv&quot;)
 
 sb &lt;- sb %&gt;%
   mutate(Value = as.numeric(str_remove(Value, &quot;%&quot;)) / 100)
@@ -2842,7 +2863,7 @@ Hannah Van Wyk
 </div>
 <div id="task-2-flavor-detection-time-series-analysis" class="section level2">
 <h2>Task 2: Flavor detection time series analysis</h2>
-<pre class="r"><code>flavor = read.csv(&quot;/home/hannah/interview/data/df_flavor.csv&quot;)
+<pre class="r"><code>flavor = read.csv(&quot;./data/df_flavor.csv&quot;)
 names = c()
 for (i in 1:120){
   names[i] = paste0(&quot;time_&quot;,i,&quot;s&quot;)
@@ -2919,12 +2940,10 @@ for (flavor in unique(flavor_long$Attribute)) {
     # calculate AUC: measure of how much the flavor was detected overall
     AUC = round(AUC(df$time, df$proportion),2)
     
-    # calculate tMax: time that it took to detect maximum proportion
-    # of people detecting that flavor
+    # calculate tMax: time that it took to detect maximum proportion of people detecting that flavor
     tmax = which.max(df$proportion)
     
-    # calculate maxp: maximum proportion of people that detected
-    # a flavor at a given time
+    # calculate maxp: maximum proportion of people that detected a flavor at a given time
     max_p = max(df$proportion)
     
     # add the stats to a dataframe
@@ -3060,9 +3079,26 @@ t2</code></pre>
 </div>
 <div id="individual-level-analysisflavor-read.csv.df_flavor.csv" class="section level2">
 <h2>Individual-level analysisflavor = read.csv(“./df_flavor.csv”)</h2>
-<p>flavor_indiv = flavor[which(flavor$Sample_ID == 1),] flavor_long_indiv = melt(flavor_indiv, measure.vars = names, variable.name = “variable_names” , value.name = “value”)</p>
-<p>flavor_long_indiv &lt;- flavor_long_indiv %&gt;% mutate(time = str_remove(variable, “time_”)) %&gt;% mutate(time = as.numeric(str_remove(time, “s”))) %&gt;% group_by(time,Attribute,Sample_Name,Blinding_Code)</p>
-<p>ggplot(flavor_long_indiv) + geom_line(aes(x = time, y=value,color=Attribute)) + facet_grid(Sample_Name~Attribute) + ggtitle(“Flavor profile for Participant 1”) + theme_classic()</p>
+<pre class="r"><code>flavor = read.csv(&quot;./data/df_flavor.csv&quot;)
+names = c()
+for (i in 1:120){
+  names[i] = paste0(&quot;time_&quot;,i,&quot;s&quot;)
+}
+
+flavor_indiv = flavor[which(flavor$Sample_ID == 1),]
+flavor_long_indiv = melt(flavor_indiv, measure.vars = names, variable.name = &quot;variable_names&quot; , value.name = &quot;value&quot;)
+
+flavor_long_indiv &lt;- flavor_long_indiv %&gt;%
+  mutate(time = str_remove(variable, &quot;time_&quot;)) %&gt;%
+  mutate(time = as.numeric(str_remove(time, &quot;s&quot;))) %&gt;% 
+  group_by(time,Attribute,Sample_Name,Blinding_Code) 
+
+ggplot(flavor_long_indiv) + 
+  geom_line(aes(x = time, y=value,color=Attribute)) + 
+  facet_grid(Sample_Name~Attribute) +
+  ggtitle(&quot;Flavor profile for Participant 1&quot;) + 
+  theme_classic()</code></pre>
+<p><img src="figure/tasks.rmd/indiv-1.png" width="672" style="display: block; margin: auto;" /></p>
 <div id="potential-analysis-calculate-pointwise-mutual-information-pmi-between-each-flavor-combination." class="section level3">
 <h3>Potential analysis: calculate pointwise mutual information (pmi) between each flavor combination.</h3>
 </div>
