@@ -1,11 +1,153 @@
 ---
-title: "Home"
-site: workflowr::wflow_site
-output:
-  workflowr::wflow_html:
-    toc: false
-editor_options:
-  chunk_output_type: console
+title: "Lab interview"
+output: html_document
+date: "2024-03-02"
 ---
 
-Welcome to my research website.
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+```
+
+## Task 1: Demographics representation in forensic genetics database
+```{r echo=FALSE, results = 'hide',include=FALSE}
+library(tidyverse)
+library(reshape)
+library(xtable)
+library(DescTools)
+library(knitr)
+library(readr)
+setwd("/home/hannah/interview/")
+```
+
+```{r}
+sb = read.csv("./data/df_state-breakdown.csv")
+st = read.csv("./data/df_state_total.csv")
+
+sb <- sb %>%
+  mutate(Value = as.numeric(str_remove(Value, "%")) / 100)
+
+# Separate the data into database and population datasets
+database_data <- sb %>% filter(Context == "Database")
+population_data <- sb %>% filter(Context == "Population")
+
+# Merge the two datasets
+merged_data <- database_data %>%
+  inner_join(population_data, by = c("State", "Demographic.Group")) %>%
+  dplyr::rename(Value_Database = Value.x, Value_Population = Value.y) %>%
+  mutate(Difference = Value_Database - Value_Population)
+
+```
+
+```{r task1-plot, dev='png',out.width="500px", out.height="300px"}
+ggplot(merged_data, aes(x = Demographic.Group, y = State, fill = Difference)) +
+  geom_tile(color = "white",size=2) + 
+  geom_text(aes(label = round(Difference, 2)),size=3) +
+  scale_fill_gradientn(colours = c("#7074c0", "#f1f1f1", "#baad03"),
+                      values = scales::rescale(c(-0.5, -0.05, 0, 0.05, 0.5)),
+                      labels = c("Underrepresented\nin Dataset","","Equally represented","","Overrepresented\nin Dataset")) +
+  theme_classic() +
+  scale_x_discrete(guide = guide_axis(angle = 90)) +
+  labs(fill='') +
+  xlab(c(""))+ ylab(c("")) +
+  theme(axis.text=element_text(size=12),legend.text=element_text(size=12),legend.position="right")
+```
+
+## Task 2: Flavor detection time series analysis
+
+```{r flavor}
+flavor = read.csv("./data/df_flavor.csv")
+names = c()
+for (i in 1:120){
+  names[i] = paste0("time_",i,"s")
+}
+
+flavor_long = melt(flavor, measure.vars = names, variable.name = "variable_names" , value.name = "value")
+
+flavor_long <- flavor_long %>%
+  mutate(time = str_remove(variable, "time_")) %>%
+  mutate(time = as.numeric(str_remove(time, "s"))) %>% 
+  group_by(time,Attribute,Sample_Name,Blinding_Code) %>% 
+  summarise(proportion = mean(value))
+
+ggplot(flavor_long) + 
+  geom_line(aes(x = time, y=proportion,color=Attribute)) + 
+  facet_wrap(.~Sample_Name) +
+  theme_classic()
+
+results = as.data.frame(matrix(nrow = length(unique(flavor_long$Attribute)),ncol = 5))
+colnames(results) = c("Flavor","Gum", "Time to Peak (mins.)", "Max proportion","AUC")
+i = 1
+for (flavor in unique(flavor_long$Attribute)) {
+  for(gum in unique(flavor_long$Sample_Name)){
+    df = flavor_long[which(flavor_long$Attribute == flavor & flavor_long$Sample_Name == gum),]
+    
+    # calculate AUC: measure of how much the flavor was detected overall
+    AUC = round(AUC(df$time, df$proportion),2)
+    
+    # calculate tMax: time that it took to detect maximum proportion of people detecting that flavor
+    tmax = which.max(df$proportion)
+    
+    # calculate maxp: maximum proportion of people that detected a flavor at a given time
+    max_p = max(df$proportion)
+    
+    # add the stats to a dataframe
+    results[i,] = c(flavor,gum, tmax, max_p,AUC)
+    i = i + 1
+  }
+}
+```
+## Free Limonene gum
+```{r,results = 'asis'}
+results_g1 = results[which(results$Gum == "Free Limonene"),]
+t1 <- kable(results_g1[,c(1,3,4,5)])
+t1
+```
+
+## Starch-Limonene Inclusion Complex gum
+```{r,results = 'asis'}
+results_g2 = results[which(results$Gum == "Starch-Limonene Inclusion Complex"),]
+t2 <- kable(results_g2[,c(1,3,4,5)])
+t2
+```
+
+### We could further stratify these tables based on gene types to see if the values differ between subgroups.
+
+## Individual-level analysis
+```{r indiv}
+flavor = read.csv("./data/df_flavor.csv")
+names = c()
+for (i in 1:120){
+  names[i] = paste0("time_",i,"s")
+}
+
+flavor_indiv = flavor[which(flavor$Sample_ID == 1),]
+flavor_long_indiv = melt(flavor_indiv, measure.vars = names, variable.name = "variable_names" , value.name = "value")
+
+flavor_long_indiv <- flavor_long_indiv %>%
+  mutate(time = str_remove(variable, "time_")) %>%
+  mutate(time = as.numeric(str_remove(time, "s"))) %>% 
+  group_by(time,Attribute,Sample_Name,Blinding_Code) 
+```
+### Flavor profile for Participant 1
+```{r indivplot, fig.width=10, fig.height=10}
+ggplot(flavor_long_indiv) + 
+  geom_line(aes(x = time, y=value,color=Attribute)) + 
+  facet_grid(Attribute~Sample_Name) +
+  theme_classic()
+```
+
+### Potential analysis: calculate pointwise mutual information (pmi) between each flavor combination.
+
+### This is a measure of association for binary events, capturing the probability they are observed together relative if they were independent:
+
+$$
+pmi = \frac{p(flavor_1 | flavor_2)}{p(flavor_1)} \\
+$$
+
+### Analysis options:
+### (1) Calculate pmi for each flavor combination (e.g., flavor 1 = bitter; flavor 2 = sweet) for each individual for their 120 minutes of data and see if the value is different for people with different genes 
+### (2) Calculate pmi for each flavor combination across all individuals at each time point to see if it is time-varying on a group level
+### (3) Calculate pmi between each flavor and itself (e.g., flavor 1 = bitter_FL; flavor 2 = bitter_SLIC) between the two gum types to see how much differently flavors are perceived between the two gum types
+
+
+
