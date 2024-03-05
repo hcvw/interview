@@ -144,7 +144,10 @@ $$
 pmi = \frac{p(flavor_1 | flavor_2)}{p(flavor_1)} \\
 $$
 
-### We could either calculate this for each individual for their 120 minutes and see if the value is different for people with different genes or calculate across all individuals at each time point to see if it is time-varying on a group level.
+### Analysis options:
+### (1) Calculate pmi for each individual for their 120 minutes of data and see if the value is different for people with different genes 
+### (2) Calculate pmi across all individuals at each time point to see if it is time-varying on a group level
+### (3) Calcualte pmi between gum types to see how much differently flavors are perceived between the two gum types
 
 
 
