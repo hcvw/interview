@@ -15,9 +15,9 @@ library(reshape)
 library(xtable)
 library(DescTools)
 library(knitr)
+library(readr)
 setwd("/home/hannah/interview/")
 ```
-
 
 ```{r}
 sb = read.csv("./data/df_state-breakdown.csv")
@@ -128,12 +128,11 @@ flavor_long_indiv <- flavor_long_indiv %>%
   mutate(time = as.numeric(str_remove(time, "s"))) %>% 
   group_by(time,Attribute,Sample_Name,Blinding_Code) 
 ```
-
+### Flavor profile for Participant 1
 ```{r indivplot, fig.width=10, fig.height=10}
 ggplot(flavor_long_indiv) + 
   geom_line(aes(x = time, y=value,color=Attribute)) + 
   facet_grid(Attribute~Sample_Name) +
-  ggtitle("Flavor profile for Participant 1") + 
   theme_classic()
 ```
 
