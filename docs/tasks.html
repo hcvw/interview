@@ -499,16 +499,16 @@ relative
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomhcvwinterviewtreeb5fb7aa44ba94db643ffec652ee61ee03e9565fctargetblankb5fb7aaa"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/hcvw/interview/tree/b5fb7aa44ba94db643ffec652ee61ee03e9565fc" target="_blank">b5fb7aa</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomhcvwinterviewtreea73f9db4df342f9295dbba1c74e400c3d3ee1318targetblanka73f9dba"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/hcvw/interview/tree/a73f9db4df342f9295dbba1c74e400c3d3ee1318" target="_blank">a73f9db</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomhcvwinterviewtreeb5fb7aa44ba94db643ffec652ee61ee03e9565fctargetblankb5fb7aaa" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomhcvwinterviewtreea73f9db4df342f9295dbba1c74e400c3d3ee1318targetblanka73f9dba" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/hcvw/interview/tree/b5fb7aa44ba94db643ffec652ee61ee03e9565fc" target="_blank">b5fb7aa</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/hcvw/interview/tree/a73f9db4df342f9295dbba1c74e400c3d3ee1318" target="_blank">a73f9db</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -556,6 +556,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/hcvw/interview/blob/a73f9db4df342f9295dbba1c74e400c3d3ee1318/analysis/tasks.rmd" target="_blank">a73f9db</a>
+</td>
+<td>
+Hannah Van Wyk
+</td>
+<td>
+2024-03-04
+</td>
+<td>
+Start my new project
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/hcvw/interview/c8abae7cc6eb5c3e02e8005b75011222b82d85ef/docs/tasks.html" target="_blank">c8abae7</a>
+</td>
+<td>
+Hannah Van Wyk
+</td>
+<td>
+2024-03-04
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -3246,14 +3280,14 @@ pmi = \frac{p(flavor_1 | flavor_2)}{p(flavor_1)} \\
 <div id="analysis-options" class="section level3">
 <h3>Analysis options:</h3>
 </div>
-<div id="calculate-pmi-for-each-individual-for-their-120-minutes-of-data-and-see-if-the-value-is-different-for-people-with-different-genes" class="section level3">
-<h3>(1) Calculate pmi for each individual for their 120 minutes of data and see if the value is different for people with different genes</h3>
+<div id="calculate-pmi-for-each-flavor-combination-e.g.-flavor-1-bitter-flavor-2-sweet-for-each-individual-for-their-120-minutes-of-data-and-see-if-the-value-is-different-for-people-with-different-genes" class="section level3">
+<h3>(1) Calculate pmi for each flavor combination (e.g., flavor 1 = bitter; flavor 2 = sweet) for each individual for their 120 minutes of data and see if the value is different for people with different genes</h3>
 </div>
-<div id="calculate-pmi-across-all-individuals-at-each-time-point-to-see-if-it-is-time-varying-on-a-group-level" class="section level3">
-<h3>(2) Calculate pmi across all individuals at each time point to see if it is time-varying on a group level</h3>
+<div id="calculate-pmi-for-each-flavor-combination-across-all-individuals-at-each-time-point-to-see-if-it-is-time-varying-on-a-group-level" class="section level3">
+<h3>(2) Calculate pmi for each flavor combination across all individuals at each time point to see if it is time-varying on a group level</h3>
 </div>
-<div id="calcualte-pmi-between-gum-types-to-see-how-much-differently-flavors-are-perceived-between-the-two-gum-types" class="section level3">
-<h3>(3) Calcualte pmi between gum types to see how much differently flavors are perceived between the two gum types</h3>
+<div id="calculate-pmi-between-each-flavor-and-itself-e.g.-flavor-1-bitter_fl-flavor-2-bitter_slic-between-the-two-gum-types-to-see-how-much-differently-flavors-are-perceived-between-the-two-gum-types" class="section level3">
+<h3>(3) Calculate pmi between each flavor and itself (e.g., flavor 1 = bitter_FL; flavor 2 = bitter_SLIC) between the two gum types to see how much differently flavors are perceived between the two gum types</h3>
 <br>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
