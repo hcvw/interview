@@ -10,8 +10,9 @@
 
 
 
+<meta name="date" content="2024-03-02" />
 
-<title>Home</title>
+<title>Lab interview</title>
 
 <script src="site_libs/header-attrs-2.25/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -29,9 +30,14 @@
        h6 {font-size: 12px;}
        code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
        pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.13.2/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-6.4.0/css/all.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.4.0/css/v4-shims.min.css" rel="stylesheet" />
 
 <link rel="icon" href="https://github.com/workflowr/workflowr-assets/raw/main/img/reproducible.png">
 <!-- Add a small amount of space between sections. -->
@@ -229,6 +235,69 @@ $(document).ready(function () {
 
 
 
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
 
 </head>
 
@@ -236,6 +305,16 @@ $(document).ready(function () {
 
 
 <div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
 
 
 
@@ -263,7 +342,13 @@ $(document).ready(function () {
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        
+        <li>
+  <a href="https://github.com/hcvw/interview">
+    <span class="fab fa-github"></span>
+     
+    Source code
+  </a>
+</li>
       </ul>
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
@@ -273,14 +358,17 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Home</h1>
+<h1 class="title toc-ignore">Lab interview</h1>
+<h4 class="date">2024-03-02</h4>
 
 </div>
 
 
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-report" data-toggle="collapse" data-target="#workflowr-report">
-<span class="glyphicon glyphicon-list" aria-hidden="true"></span> workflowr <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
+<span class="glyphicon glyphicon-list" aria-hidden="true"></span>
+workflowr <span class="glyphicon glyphicon-exclamation-sign text-danger"
+aria-hidden="true"></span>
 </button>
 </p>
 <div id="workflowr-report" class="collapse">
@@ -289,7 +377,9 @@ $(document).ready(function () {
 <a data-toggle="tab" href="#summary">Summary</a>
 </li>
 <li>
-<a data-toggle="tab" href="#checks"> Checks <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> </a>
+<a data-toggle="tab" href="#checks"> Checks <span
+class="glyphicon glyphicon-exclamation-sign text-danger"
+aria-hidden="true"></span> </a>
 </li>
 <li>
 <a data-toggle="tab" href="#versions">Past versions</a>
@@ -298,17 +388,27 @@ $(document).ready(function () {
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2024-03-02
+<strong>Last updated:</strong> 2024-03-05
 </p>
 <p>
-<strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 2 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 0
+<strong>Checks:</strong> <span
+class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 6
+<span class="glyphicon glyphicon-exclamation-sign text-danger"
+aria-hidden="true"></span> 1
 </p>
 <p>
-<strong>Knit directory:</strong> <code>interview/</code> <span class="glyphicon glyphicon-question-sign" aria-hidden="true" title="This is the local directory in which the code in this file was executed."> </span>
+<strong>Knit directory:</strong> <code>interview/</code> <span
+class="glyphicon glyphicon-question-sign" aria-hidden="true"
+title="This is the local directory in which the code in this file was executed.">
+</span>
 </p>
 <p>
-This reproducible <a href="https://rmarkdown.rstudio.com">R Markdown</a> analysis was created with <a
-  href="https://github.com/workflowr/workflowr">workflowr</a> (version 1.7.1). The <em>Checks</em> tab describes the reproducibility checks that were applied when the results were created. The <em>Past versions</em> tab lists the development history.
+This reproducible <a href="https://rmarkdown.rstudio.com">R Markdown</a>
+analysis was created with <a
+  href="https://github.com/workflowr/workflowr">workflowr</a> (version
+1.7.1). The <em>Checks</em> tab describes the reproducibility checks
+that were applied when the results were created. The <em>Past
+versions</em> tab lists the development history.
 </p>
 <hr>
 </div>
@@ -317,33 +417,171 @@ This reproducible <a href="https://rmarkdown.rstudio.com">R Markdown</a> analysi
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguptodate"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>R Markdown file:</strong> up-to-date </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguptodate">
+<span class="glyphicon glyphicon-ok text-success"
+aria-hidden="true"></span> <strong>R Markdown file:</strong> up-to-date
+</a>
 </p>
 </div>
-<div id="strongRMarkdownfilestronguptodate" class="panel-collapse collapse">
+<div id="strongRMarkdownfilestronguptodate"
+class="panel-collapse collapse">
 <div class="panel-body">
-<p>Great! Since the R Markdown file has been committed to the Git repository, you know the exact version of the code that produced these results.</p>
+<p>Great! Since the R Markdown file has been committed to the Git
+repository, you know the exact version of the code that produced these
+results.</p>
 </div>
 </div>
 </div>
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrong8158e44"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> 8158e44 </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongEnvironmentstrongempty">
+<span class="glyphicon glyphicon-ok text-success"
+aria-hidden="true"></span> <strong>Environment:</strong> empty </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrong8158e44" class="panel-collapse collapse">
+<div id="strongEnvironmentstrongempty" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Great job! The global environment was empty. Objects defined in the
+global environment can affect the analysis in your R Markdown file in
+unknown ways. For reproduciblity it’s best to always run the code in an
+empty environment.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongSeedstrongcodesetseed20240302code">
+<span class="glyphicon glyphicon-ok text-success"
+aria-hidden="true"></span> <strong>Seed:</strong>
+<code>set.seed(20240302)</code> </a>
+</p>
+</div>
+<div id="strongSeedstrongcodesetseed20240302code"
+class="panel-collapse collapse">
+<div class="panel-body">
+<p>The command <code>set.seed(20240302)</code> was run prior to running
+the code in the R Markdown file. Setting a seed ensures that any results
+that rely on randomness, e.g. subsampling or permutations, are
+reproducible.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongSessioninformationstrongrecorded">
+<span class="glyphicon glyphicon-ok text-success"
+aria-hidden="true"></span> <strong>Session information:</strong>
+recorded </a>
+</p>
+</div>
+<div id="strongSessioninformationstrongrecorded"
+class="panel-collapse collapse">
+<div class="panel-body">
+<p>Great job! Recording the operating system, R version, and package
+versions is critical for reproducibility.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongCachestrongnone">
+<span class="glyphicon glyphicon-ok text-success"
+aria-hidden="true"></span> <strong>Cache:</strong> none </a>
+</p>
+</div>
+<div id="strongCachestrongnone" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Nice! There were no cached chunks for this analysis, so you can be
+confident that you successfully produced the results during this
+run.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongFilepathsstrongabsolute">
+<span class="glyphicon glyphicon-exclamation-sign text-danger"
+aria-hidden="true"></span> <strong>File paths:</strong> absolute </a>
+</p>
+</div>
+<div id="strongFilepathsstrongabsolute" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
-Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
+Using absolute paths to the files within your workflowr project makes it
+difficult for you and others to run your code on a different machine.
+Change the absolute path(s) below to the suggested relative path(s) to
+make your code more reproducible.
+</p>
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th style="text-align:left;">
+absolute
+</th>
+<th style="text-align:left;">
+relative
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+/home/hannah/interview/
+</td>
+<td style="text-align:left;">
+.
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomhcvwinterviewtreefe5e353562105ef7e38555304c4dc8be67b34028targetblankfe5e353a">
+<span class="glyphicon glyphicon-ok text-success"
+aria-hidden="true"></span> <strong>Repository version:</strong>
+<a href="https://github.com/hcvw/interview/tree/fe5e353562105ef7e38555304c4dc8be67b34028" target="_blank">fe5e353</a>
+</a>
+</p>
+</div>
+<div
+id="strongRepositoryversionstrongahrefhttpsgithubcomhcvwinterviewtreefe5e353562105ef7e38555304c4dc8be67b34028targetblankfe5e353a"
+class="panel-collapse collapse">
+<div class="panel-body">
+<p>
+Great! You are using Git for version control. Tracking code development
+and connecting the code version to the results is critical for
+reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version 8158e44. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version
+<a href="https://github.com/hcvw/interview/tree/fe5e353562105ef7e38555304c4dc8be67b34028" target="_blank">fe5e353</a>.
+See the <em>Past versions</em> tab to see a history of the changes made
+to the R Markdown and HTML files.
 </p>
 <p>
-Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
+Note that you need to be careful to ensure that all relevant files for
+the analysis have been committed to Git prior to generating the results
+(you can use <code>wflow_publish</code> or
+<code>wflow_git_commit</code>). workflowr only checks the R Markdown
+file, but you know if there are other scripts or data files that it
+depends on. Below is the status of the Git repository when the results
+were generated:
 </p>
 <pre><code>
+Ignored files:
+    Ignored:    .Rhistory
+    Ignored:    .Rproj.user/
+    Ignored:    analysis/figure/
+
 Untracked files:
     Untracked:  data/df_flavor.csv
     Untracked:  data/df_state-breakdown.csv
@@ -351,7 +589,9 @@ Untracked files:
 
 </code></pre>
 <p>
-Note that any generated files, e.g. HTML, png, CSS, etc., are not included in this status report because it is ok for generated content to have uncommitted changes.
+Note that any generated files, e.g. HTML, png, CSS, etc., are not
+included in this status report because it is ok for generated content to
+have uncommitted changes.
 </p>
 </div>
 </div>
@@ -362,7 +602,11 @@ Note that any generated files, e.g. HTML, png, CSS, etc., are not included in t
 <div id="versions" class="tab-pane fade">
 
 <p>
-These are the previous versions of the repository in which changes were made to the R Markdown (<code>analysis/index.Rmd</code>) and HTML (<code>docs/index.html</code>) files. If you’ve configured a remote Git repository (see <code>?wflow_git_remote</code>), click on the hyperlinks in the table below to view the files as they were in that past version.
+These are the previous versions of the repository in which changes were
+made to the R Markdown (<code>analysis/index.Rmd</code>) and HTML
+(<code>docs/index.html</code>) files. If you’ve configured a remote Git
+repository (see <code>?wflow_git_remote</code>), click on the hyperlinks
+in the table below to view the files as they were in that past version.
 </p>
 <div class="table-responsive">
 <table class="table table-condensed table-hover">
@@ -391,7 +635,41 @@ Message
 Rmd
 </td>
 <td>
-263dffb
+<a href="https://github.com/hcvw/interview/blob/fe5e353562105ef7e38555304c4dc8be67b34028/analysis/index.Rmd" target="_blank">fe5e353</a>
+</td>
+<td>
+Hannah Van Wyk
+</td>
+<td>
+2024-03-05
+</td>
+<td>
+Start my new project
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/hcvw/interview/2fd5e5d70616ca5005af11e162067c835802174c/docs/index.html" target="_blank">2fd5e5d</a>
+</td>
+<td>
+Hannah Van Wyk
+</td>
+<td>
+2024-03-02
+</td>
+<td>
+Build site.
+</td>
+</tr>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/hcvw/interview/blob/263dffb26d8040d14907aba5f1a7f7aedac311a7/analysis/index.Rmd" target="_blank">263dffb</a>
 </td>
 <td>
 Hannah Van Wyk
@@ -410,7 +688,332 @@ Start workflowr project.
 </div>
 </div>
 </div>
-<p>Welcome to my research website.</p>
+<div
+id="task-1-demographics-representation-in-forensic-genetics-database"
+class="section level2">
+<h2>Task 1: Demographics representation in forensic genetics
+database</h2>
+<pre class="r"><code>sb = read.csv(&quot;./data/df_state-breakdown.csv&quot;)
+st = read.csv(&quot;./data/df_state_total.csv&quot;)
+
+sb &lt;- sb %&gt;%
+  mutate(Value = as.numeric(str_remove(Value, &quot;%&quot;)) / 100)
+
+# Separate the data into database and population datasets
+database_data &lt;- sb %&gt;% filter(Context == &quot;Database&quot;)
+population_data &lt;- sb %&gt;% filter(Context == &quot;Population&quot;)
+
+# Merge the two datasets
+merged_data &lt;- database_data %&gt;%
+  inner_join(population_data, by = c(&quot;State&quot;, &quot;Demographic.Group&quot;)) %&gt;%
+  dplyr::rename(Value_Database = Value.x, Value_Population = Value.y) %&gt;%
+  mutate(Difference = Value_Database - Value_Population)</code></pre>
+<pre class="r"><code>ggplot(merged_data, aes(x = Demographic.Group, y = State, fill = Difference)) +
+  geom_tile(color = &quot;white&quot;,size=2) + 
+  geom_text(aes(label = round(Difference, 2)),size=3) +
+  scale_fill_gradientn(colours = c(&quot;#7074c0&quot;, &quot;#f1f1f1&quot;, &quot;#baad03&quot;),
+                      values = scales::rescale(c(-0.5, -0.05, 0, 0.05, 0.5)),
+                      labels = c(&quot;Underrepresented\nin Dataset&quot;,&quot;&quot;,&quot;Equally represented&quot;,&quot;&quot;,&quot;Overrepresented\nin Dataset&quot;)) +
+  theme_classic() +
+  scale_x_discrete(guide = guide_axis(angle = 90)) +
+  labs(fill=&#39;&#39;) +
+  xlab(c(&quot;&quot;))+ ylab(c(&quot;&quot;)) +
+  theme(axis.text=element_text(size=12),legend.text=element_text(size=12),legend.position=&quot;right&quot;)</code></pre>
+<p><img src="figure/index.Rmd/task1-plot-1.png" width="500px" height="300px" style="display: block; margin: auto;" /></p>
+</div>
+<div id="task-2-flavor-detection-time-series-analysis"
+class="section level2">
+<h2>Task 2: Flavor detection time series analysis</h2>
+<pre class="r"><code>flavor = read.csv(&quot;./data/df_flavor.csv&quot;)
+names = c()
+for (i in 1:120){
+  names[i] = paste0(&quot;time_&quot;,i,&quot;s&quot;)
+}
+
+flavor_long = melt(flavor, measure.vars = names, variable.name = &quot;variable_names&quot; , value.name = &quot;value&quot;)
+
+flavor_long &lt;- flavor_long %&gt;%
+  mutate(time = str_remove(variable, &quot;time_&quot;)) %&gt;%
+  mutate(time = as.numeric(str_remove(time, &quot;s&quot;))) %&gt;% 
+  group_by(time,Attribute,Sample_Name,Blinding_Code) %&gt;% 
+  summarise(proportion = mean(value))
+
+ggplot(flavor_long) + 
+  geom_line(aes(x = time, y=proportion,color=Attribute)) + 
+  facet_wrap(.~Sample_Name) +
+  theme_classic()</code></pre>
+<p><img src="figure/index.Rmd/flavor-1.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>results = as.data.frame(matrix(nrow = length(unique(flavor_long$Attribute)),ncol = 5))
+colnames(results) = c(&quot;Flavor&quot;,&quot;Gum&quot;, &quot;Time to Peak (mins.)&quot;, &quot;Max proportion&quot;,&quot;AUC&quot;)
+i = 1
+for (flavor in unique(flavor_long$Attribute)) {
+  for(gum in unique(flavor_long$Sample_Name)){
+    df = flavor_long[which(flavor_long$Attribute == flavor &amp; flavor_long$Sample_Name == gum),]
+    
+    # calculate AUC: measure of how much the flavor was detected overall
+    AUC = round(AUC(df$time, df$proportion),2)
+    
+    # calculate tMax: time that it took to detect maximum proportion of people detecting that flavor
+    tmax = which.max(df$proportion)
+    
+    # calculate maxp: maximum proportion of people that detected a flavor at a given time
+    max_p = max(df$proportion)
+    
+    # add the stats to a dataframe
+    results[i,] = c(flavor,gum, tmax, max_p,AUC)
+    i = i + 1
+  }
+}</code></pre>
+</div>
+<div id="free-limonene-gum" class="section level2">
+<h2>Free Limonene gum</h2>
+<pre class="r"><code>results_g1 = results[which(results$Gum == &quot;Free Limonene&quot;),]
+t1 &lt;- kable(results_g1[,c(1,3,4,5)])
+t1</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="left">Flavor</th>
+<th align="left">Time to Peak (mins.)</th>
+<th align="left">Max proportion</th>
+<th align="left">AUC</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">1</td>
+<td align="left">Bitter</td>
+<td align="left">118</td>
+<td align="left">0.19</td>
+<td align="left">15.09</td>
+</tr>
+<tr class="even">
+<td align="left">3</td>
+<td align="left">Citrus</td>
+<td align="left">41</td>
+<td align="left">0.64</td>
+<td align="left">56.7</td>
+</tr>
+<tr class="odd">
+<td align="left">5</td>
+<td align="left">Cohesive</td>
+<td align="left">71</td>
+<td align="left">0.87</td>
+<td align="left">88.47</td>
+</tr>
+<tr class="even">
+<td align="left">7</td>
+<td align="left">Sour</td>
+<td align="left">18</td>
+<td align="left">0.17</td>
+<td align="left">8.82</td>
+</tr>
+<tr class="odd">
+<td align="left">9</td>
+<td align="left">Stale</td>
+<td align="left">119</td>
+<td align="left">0.48</td>
+<td align="left">23.39</td>
+</tr>
+<tr class="even">
+<td align="left">11</td>
+<td align="left">Sweet</td>
+<td align="left">22</td>
+<td align="left">0.83</td>
+<td align="left">71.95</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="starch-limonene-inclusion-complex-gum" class="section level2">
+<h2>Starch-Limonene Inclusion Complex gum</h2>
+<pre class="r"><code>results_g2 = results[which(results$Gum == &quot;Starch-Limonene Inclusion Complex&quot;),]
+t2 &lt;- kable(results_g2[,c(1,3,4,5)])
+t2</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="left">Flavor</th>
+<th align="left">Time to Peak (mins.)</th>
+<th align="left">Max proportion</th>
+<th align="left">AUC</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">2</td>
+<td align="left">Bitter</td>
+<td align="left">21</td>
+<td align="left">0.5</td>
+<td align="left">37.63</td>
+</tr>
+<tr class="even">
+<td align="left">4</td>
+<td align="left">Citrus</td>
+<td align="left">20</td>
+<td align="left">0.7</td>
+<td align="left">61.66</td>
+</tr>
+<tr class="odd">
+<td align="left">6</td>
+<td align="left">Cohesive</td>
+<td align="left">57</td>
+<td align="left">0.84</td>
+<td align="left">83.07</td>
+</tr>
+<tr class="even">
+<td align="left">8</td>
+<td align="left">Sour</td>
+<td align="left">18</td>
+<td align="left">0.36</td>
+<td align="left">15.43</td>
+</tr>
+<tr class="odd">
+<td align="left">10</td>
+<td align="left">Stale</td>
+<td align="left">118</td>
+<td align="left">0.54</td>
+<td align="left">33.9</td>
+</tr>
+<tr class="even">
+<td align="left">12</td>
+<td align="left">Sweet</td>
+<td align="left">18</td>
+<td align="left">0.55</td>
+<td align="left">49.32</td>
+</tr>
+</tbody>
+</table>
+<div
+id="we-could-further-stratify-these-tables-based-on-gene-types-to-see-if-the-values-differ-between-subgroups."
+class="section level3">
+<h3>We could further stratify these tables based on gene types to see if
+the values differ between subgroups.</h3>
+</div>
+</div>
+<div id="individual-level-analysis" class="section level2">
+<h2>Individual-level analysis</h2>
+<pre class="r"><code>flavor = read.csv(&quot;./data/df_flavor.csv&quot;)
+names = c()
+for (i in 1:120){
+  names[i] = paste0(&quot;time_&quot;,i,&quot;s&quot;)
+}
+
+flavor_indiv = flavor[which(flavor$Sample_ID == 1),]
+flavor_long_indiv = melt(flavor_indiv, measure.vars = names, variable.name = &quot;variable_names&quot; , value.name = &quot;value&quot;)
+
+flavor_long_indiv &lt;- flavor_long_indiv %&gt;%
+  mutate(time = str_remove(variable, &quot;time_&quot;)) %&gt;%
+  mutate(time = as.numeric(str_remove(time, &quot;s&quot;))) %&gt;% 
+  group_by(time,Attribute,Sample_Name,Blinding_Code) </code></pre>
+<div id="flavor-profile-for-participant-1" class="section level3">
+<h3>Flavor profile for Participant 1</h3>
+<pre class="r"><code>ggplot(flavor_long_indiv) + 
+  geom_line(aes(x = time, y=value,color=Attribute)) + 
+  facet_grid(Attribute~Sample_Name) +
+  theme_classic()</code></pre>
+<p><img src="figure/index.Rmd/indivplot-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+<div
+id="potential-analysis-calculate-pointwise-mutual-information-pmi-between-each-flavor-combination."
+class="section level3">
+<h3>Potential analysis: calculate pointwise mutual information (pmi)
+between each flavor combination.</h3>
+</div>
+<div
+id="this-is-a-measure-of-association-for-binary-events-capturing-the-probability-they-are-observed-together-relative-if-they-were-independent"
+class="section level3">
+<h3>This is a measure of association for binary events, capturing the
+probability they are observed together relative if they were
+independent:</h3>
+<p><span class="math display">\[
+pmi = \frac{p(flavor_1 | flavor_2)}{p(flavor_1)} \\
+\]</span></p>
+</div>
+<div id="analysis-options" class="section level3">
+<h3>Analysis options:</h3>
+</div>
+<div
+id="calculate-pmi-for-each-flavor-combination-e.g.-flavor-1-bitter-flavor-2-sweet-for-each-individual-for-their-120-minutes-of-data-and-see-if-the-value-is-different-for-people-with-different-genes"
+class="section level3">
+<h3>(1) Calculate pmi for each flavor combination (e.g., flavor 1 =
+bitter; flavor 2 = sweet) for each individual for their 120 minutes of
+data and see if the value is different for people with different
+genes</h3>
+</div>
+<div
+id="calculate-pmi-for-each-flavor-combination-across-all-individuals-at-each-time-point-to-see-if-it-is-time-varying-on-a-group-level"
+class="section level3">
+<h3>(2) Calculate pmi for each flavor combination across all individuals
+at each time point to see if it is time-varying on a group level</h3>
+</div>
+<div
+id="calculate-pmi-between-each-flavor-and-itself-e.g.-flavor-1-bitter_fl-flavor-2-bitter_slic-between-the-two-gum-types-to-see-how-much-differently-flavors-are-perceived-between-the-two-gum-types"
+class="section level3">
+<h3>(3) Calculate pmi between each flavor and itself (e.g., flavor 1 =
+bitter_FL; flavor 2 = bitter_SLIC) between the two gum types to see how
+much differently flavors are perceived between the two gum types</h3>
+<br>
+<p>
+<button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
+<span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>
+Session information
+</button>
+</p>
+<div id="workflowr-sessioninfo" class="collapse">
+<pre class="r"><code>sessionInfo()</code></pre>
+<pre><code>R version 4.3.1 (2023-06-16)
+Platform: x86_64-pc-linux-gnu (64-bit)
+Running under: Ubuntu 22.04.3 LTS
+
+Matrix products: default
+BLAS:   /usr/lib/x86_64-linux-gnu/openblas-pthread/libblas.so.3 
+LAPACK: /usr/lib/x86_64-linux-gnu/openblas-pthread/libopenblasp-r0.3.20.so;  LAPACK version 3.10.0
+
+locale:
+ [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              
+ [3] LC_TIME=en_US.UTF-8        LC_COLLATE=en_US.UTF-8    
+ [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8   
+ [7] LC_PAPER=en_US.UTF-8       LC_NAME=C                 
+ [9] LC_ADDRESS=C               LC_TELEPHONE=C            
+[11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
+
+time zone: America/New_York
+tzcode source: system (glibc)
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+other attached packages:
+ [1] knitr_1.45        DescTools_0.99.50 xtable_1.8-4      reshape_0.8.9    
+ [5] lubridate_1.9.2   forcats_1.0.0     stringr_1.5.0     dplyr_1.1.2      
+ [9] purrr_1.0.2       readr_2.1.4       tidyr_1.3.0       tibble_3.2.1     
+[13] ggplot2_3.4.3     tidyverse_2.0.0   workflowr_1.7.1  
+
+loaded via a namespace (and not attached):
+ [1] gld_2.6.6         gtable_0.3.3      xfun_0.40         bslib_0.5.1      
+ [5] processx_3.8.2    lattice_0.21-8    callr_3.7.3       tzdb_0.4.0       
+ [9] vctrs_0.6.3       tools_4.3.1       ps_1.7.5          generics_0.1.3   
+[13] proxy_0.4-27      fansi_1.0.4       highr_0.10        pkgconfig_2.0.3  
+[17] Matrix_1.6-0      data.table_1.14.8 readxl_1.4.3      rootSolve_1.8.2.4
+[21] lifecycle_1.0.3   farver_2.1.1      compiler_4.3.1    git2r_0.33.0     
+[25] Exact_3.2         munsell_0.5.0     getPass_0.2-4     httpuv_1.6.11    
+[29] class_7.3-22      htmltools_0.5.6   sass_0.4.7        yaml_2.3.7       
+[33] later_1.3.1       pillar_1.9.0      jquerylib_0.1.4   whisker_0.4.1    
+[37] MASS_7.3-60       cachem_1.0.8      boot_1.3-28       tidyselect_1.2.0 
+[41] digest_0.6.33     mvtnorm_1.2-2     stringi_1.7.12    labeling_0.4.2   
+[45] rprojroot_2.0.3   fastmap_1.1.1     grid_4.3.1        expm_0.999-7     
+[49] colorspace_2.1-0  lmom_3.0          cli_3.6.1         magrittr_2.0.3   
+[53] utf8_1.2.3        e1071_1.7-13      withr_2.5.0       scales_1.2.1     
+[57] promises_1.2.1    timechange_0.2.0  rmarkdown_2.25    httr_1.4.7       
+[61] cellranger_1.1.0  hms_1.1.3         evaluate_0.21     rlang_1.1.1      
+[65] Rcpp_1.0.11       glue_1.6.2        rstudioapi_0.15.0 jsonlite_1.8.7   
+[69] R6_2.5.1          plyr_1.8.8        fs_1.6.3         </code></pre>
+</div>
+</div>
+</div>
 
 
 <!-- Adjust MathJax settings so that all math formulae are shown using
@@ -428,6 +1031,8 @@ footer is added to webpages before the MathJax javascript. -->
 
 
 
+</div>
+</div>
 
 </div>
 
@@ -460,6 +1065,35 @@ $(document).ready(function () {
 
 <!-- code folding -->
 
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>
